@@ -1,8 +1,3 @@
-let files = [];
-for (let i = 1; i < 7; ++i) {
-  files.push(document.getElementsByTagName("link")[i]);
-}
-console.log(files);
 (function(window, document) {
   var layout = document.getElementById("layout"),
     menu = document.getElementById("menu"),
@@ -48,8 +43,3 @@ console.log(files);
   };
 })(this, this.document);
 
-[...document.getElementsByClassName("pure-menu-item")].forEach(item => {
-  item.addEventListener(() => {
-      document.getElementsByClassName("content")[0].replaceChild
-  });
-});

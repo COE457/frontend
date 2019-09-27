@@ -1,0 +1,29 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "The frontend (webpage) of COE375 project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COE457/frontend.git"
+  },
+  "keywords": [
+    "children",
+    "monitoring",
+    "sensors",
+    "beacons",
+    "estimote"
+  ],
+  "author": "Alaa Youssef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COE457/frontend/issues"
+  },
+  "homepage": "https://github.com/COE457/frontend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
