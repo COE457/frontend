@@ -1,0 +1,23 @@
+<svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="252" width="252" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_2">
+   <g stroke="null" id="svg_1" fill="#1A1A1A" transform="matrix(1.5498131096564025,0,0,1.5498131859108621,-403.2909699846473,181.84467436563548) ">
+    <svg stroke="null" id="svg_3" viewBox="0 0 100 100" y="-161.438047" x="215.469095" xmlns:xlink="http://www.w3.org/1999/xlink">
+     <path stroke="#1A1A1A" id="svg_4" d="m50,62.7" stroke-miterlimit="10" stroke-width="2" fill="#1A1A1A"/>
+     <path stroke="null" id="svg_5" d="m50,82.1c-17.7,0 -32.1,-14.4 -32.1,-32.1c0,-17.7 14.4,-32.1 32.1,-32.1c17.7,0 32.1,14.4 32.1,32.1c0,17.7 -14.4,32.1 -32.1,32.1zm0,-61.2c-16.1,0 -29.1,13.1 -29.1,29.1c0,16.1 13.1,29.1 29.1,29.1c16.1,0 29.1,-13.1 29.1,-29.1c0,-16.1 -13,-29.1 -29.1,-29.1z" fill="#1A1A1A"/>
+     <path stroke="null" id="svg_6" d="m50,75c-13.4,0 -24,-10.1 -24,-23c0,-0.4 0,-0.7 0,-1.1l2,0.1c0,0.3 0,0.6 0,0.9c0,12 9.4,21 22,21c12.5,0 22,-9 22,-21c0,-0.3 0,-0.6 0,-0.9l2,-0.1c0,0.3 0,0.7 0,1.1c0,12.9 -10.6,23 -24,23z" fill="#1A1A1A"/>
+     <path stroke="#1A1A1A" id="svg_7" d="m50,41.7" stroke-miterlimit="10" stroke-width="2" fill="#1A1A1A"/>
+     <path stroke="#1A1A1A" id="svg_8" d="m50,41.7" stroke-miterlimit="10" stroke-width="2" fill="#1A1A1A"/>
+     <path stroke="null" id="svg_9" d="m44.4,52.4l-6.9,-3.6l-6.9,3.6l1.3,-7.7l-5.6,-5.4l7.7,-1.1l3.4,-7l3.4,7l7.7,1.1l-5.6,5.4l1.5,7.7zm-6.9,-5.9l4.2,2.2l-0.8,-4.7l3.4,-3.3l-4.7,-0.7l-2.1,-4.3l-2.1,4.3l-4.7,0.7l3.4,3.3l-0.8,4.7l4.2,-2.2z" fill="#1A1A1A"/>
+     <path stroke="null" id="svg_10" d="m69.4,52.4l-6.9,-3.6l-6.9,3.6l1.3,-7.7l-5.6,-5.4l7.7,-1.1l3.4,-7l3.4,7l7.7,1.1l-5.6,5.4l1.5,7.7zm-6.9,-5.9l4.2,2.2l-0.8,-4.7l3.4,-3.3l-4.7,-0.7l-2.1,-4.3l-2.1,4.3l-4.7,0.7l3.4,3.3l-0.8,4.7l4.2,-2.2z" fill="#1A1A1A"/>
+    </svg>
+   </g>
+  </g>
+ </g>
+</svg>
