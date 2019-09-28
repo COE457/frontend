@@ -54,11 +54,14 @@
 
       <div id="main">
         <div class="header">
-          <h1 id="pageTitle">Page Title</h1>
-          <h2>A subtitle for your page goes here</h2>
+          <h1 id="pageTitle">Home</h1>
         </div>
 
-        <div id="content"></div>
+        <div id="content">
+          <script>
+            $("#content").load("home.html #contents"); // loads home at GET '/' 
+          </script>
+        </div>
       </div>
     </div>
 
