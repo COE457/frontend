@@ -31,6 +31,9 @@ app.get("/communication.html", (req, res) => {
     res.sendFile(path.resolve('../public/html/communication.html'));
 });
 
+app.get("/communication.html", (req, res) => {
+    res.sendFile(path.resolve('../public/html/communication.html'));
+});
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

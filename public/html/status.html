@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-        <div id="contents">status</div>
-</body>
+  </head>
+  <body>
+    <div id="contents">
+      <main class="wrapper">
+        <section class="gridContainer" id="row1">
+          <ul>
+            <li>
+              <div class="cardBody">
+                <figure>
+                  <img
+                    src="../images/sleep/awake.svg"
+                    alt="Excited"
+                    height="200px"
+                  />
+                  <figcaption><h3>Awake</h3></figcaption>
+                </figure>
+              </div>
+            </li>
+
+            <li>
+              <div class="cardBody">
+                <figure>
+                  <svg
+                    version="1.1"
+                    id="heartRate"
+                    xmlns="&ns_svg;"
+                    xmlns:xlink="&ns_xlink;"
+                    viewBox="50 50 450 350"
+                    style="overflow:visible;"
+                    xml:space="preserve"
+                    height="200px"
+                  ></svg>
+                  <figcaption><h3>Heart Rate</h3></figcaption>
+                </figure>
+              </div>
+            </li>
+
+            <li>
+              <div class="cardBody">
+                <figure>
+                  <svg
+                    id="thermometerBody"
+                    viewBox="-24 0 75 75"
+                    style="overflow:visible;"
+                    height="200px"
+                  >
+                    <g></g>
+                  </svg>
+                  <figcaption><h3>Body Temperature</h3></figcaption>
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="gridContainer" id="row2">
+          <ul>
+            <li>
+              <div class="cardBody">
+                <figure>
+                  <section class="gridContainer" id="row2-1">
+                    <ul>
+                      <li>
+                        <div class="cardBody">
+                          <figure>
+                            <img
+                              src="../images/lighting/wellLit.png"
+                              alt="Lit bulb"
+                            />
+                            <figcaption><h3>Lighting</h3></figcaption>
+                          </figure>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="cardBody">
+                          <figure>
+                            <svg
+                              id="thermometerRoom"
+                              viewBox="-24 0 75 75"
+                              style="overflow:visible;"
+                              
+                            >
+                              <g></g>
+                            </svg>
+                            <figcaption><h3>Temperature</h3></figcaption>
+                          </figure>
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+                  <figcaption><h3>Room Status</h3></figcaption>
+                </figure>
+              </div>
+            </li>
+
+            <li>
+              <div class="cardBody">
+                <figure>
+                  <img src="../images/status/chill.png" alt="Chill Girl" />
+                  <figcaption><h3>Panic Alert: OFF</h3></figcaption>
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

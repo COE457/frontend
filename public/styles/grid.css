@@ -26,7 +26,8 @@
   width: 100%;
 }
 
-.gridContainer > ul > li > .cardBody > figure > img {
+.gridContainer > ul > li > .cardBody > figure > img,
+.gridContainer > ul > li > .cardBody > figure > svg {
   border: 0;
   position: relative;
   width: 100%;
