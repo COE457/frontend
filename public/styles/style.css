@@ -967,6 +967,9 @@ a.pure-button-selected {
   border-spacing: 0;
   empty-cells: show;
   border: 1px solid #cbcbcb;
+  margin: auto;
+  width: 80%;
+  text-align: center;
 }
 .pure-table caption {
   color: #000;
@@ -986,7 +989,7 @@ a.pure-button-selected {
 .pure-table thead {
   background-color: #e0e0e0;
   color: #000;
-  text-align: left;
+  text-align: center;
   vertical-align: bottom;
 }
 .pure-table td {
