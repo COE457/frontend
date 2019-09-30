@@ -8,6 +8,8 @@
                     t("#thermometerRoom");
                     t("#thermometerBody");
                     h();
+                } else if (element.id == "location") {
+                    updateLocation();
                 }
             });//adding an event listener to each menu link that changes the 
                                                                     //contents of the content div to be (%id%.html)

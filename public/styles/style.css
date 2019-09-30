@@ -968,7 +968,7 @@ a.pure-button-selected {
   empty-cells: show;
   border: 1px solid #cbcbcb;
   margin: auto;
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 .pure-table caption {
@@ -995,6 +995,7 @@ a.pure-button-selected {
 .pure-table td {
   background-color: transparent;
 }
+
 .pure-table-odd td {
   background-color: #f2f2f2;
 }
