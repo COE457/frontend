@@ -9,7 +9,7 @@ let locationTableHead = "<thead>\
 const updateLocation = (window, document) => {
     $("#locationTable")
         .empty()
-        .append(locationTableHead + (fetchLocations()));
+        .append(locationTableHead + genLocationTableBody(fetchLocations()));
 }
 
 const fetchLocations = () => {
