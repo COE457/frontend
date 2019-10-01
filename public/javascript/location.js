@@ -9,7 +9,7 @@ let locationTableHead = "<thead>\
 const updateLocation = (window, document) => {
     $("#locationTable")
         .empty()
-        .append(locationTableHead + genTableBody(fetchLocations()));
+        .append(locationTableHead + (fetchLocations()));
 }
 
 const fetchLocations = () => {
@@ -32,7 +32,7 @@ const fetchLocations = () => {
     ]);
 }
 
-function genTableBody(data){
+function genLocationTableBody(data){
     let tmp = "<tbody>";
     data.forEach(element => {
         tmp += "<tr>";

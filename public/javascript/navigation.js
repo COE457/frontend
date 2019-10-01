@@ -10,6 +10,8 @@
                     h();
                 } else if (element.id == "location") {
                     updateLocation();
+                } else if (element.id == "objects"){
+                    updateObjects();
                 }
             });//adding an event listener to each menu link that changes the 
                                                                     //contents of the content div to be (%id%.html)
