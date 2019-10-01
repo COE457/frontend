@@ -41,28 +41,14 @@ Note that the `id` will be used in naming the html file.
 
 
 ## Using Grids and Cards:
-Responsive cards. The width of each row is exactly the width of the empty space in `index.html`.
+* Responsive cards. The width of each row is exactly the width of the empty space in `index.html`.
 Each row tries to distribute its width on the cards it contains.
 
-### Creating a Row of Cards
-Add a section with class=`gridContainer` with a single unsorted list child.
+* Cards should be placed in a `<section class="gridContainer">`
 
-> \<section class="gridContainer" id="row1">\
-> &nbsp;&nbsp;&nbsp;&nbsp;\<ul>\
-> &nbsp;&nbsp;&nbsp;&nbsp;\</ul>\
-> \</section>
+* Use `<ul>` to create a new row of cards 
 
-### Filling a Row with Cards:
-Add list elements to the unsorted list with a single div child with class=`cardBody`. This div is designed to hold a `<figure>` and a `<p>`.
-
->\<li>\
->&nbsp;&nbsp;&nbsp;&nbsp;\<div class="cardBody">\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<figure>\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<img src="IMG_SRC" alt="ALT_TEXT" />\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<figcaption>\<h3>TITLE_GOES_HERE\</h3>\</figcaption>\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</figure>\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<p>\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALUE_GOES_HERE\
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</p>\
->&nbsp;&nbsp;&nbsp;&nbsp;\</div>\
->\</li>
+* Use `<li>` to create a card
+  * Use `<div class="cardHeader">` to place a card title under an `<h3>` tag
+  * Use `<div class="cardBody">` to place the card contents (either text or img or svg) in the body of the card
+  * Use `<div class="cardFooter">` to place the card value or description under `<h3>` tag
