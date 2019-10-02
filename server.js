@@ -35,5 +35,9 @@ app.get("/communication.html", (req, res) => {
     res.sendFile(path.resolve('./public/html/communication.html'));
 });
 
+app.get("/login", (req, res) => {
+    res.sendFile(path.resolve('./public/html/login.html'));
+});
+
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
