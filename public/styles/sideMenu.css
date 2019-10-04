@@ -76,6 +76,10 @@ The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
 appears on the left side of the page.
 */
 
+
+
+
+
 #menu {
   margin-left: -150px; /* "#menu" width */
   width: 150px;
@@ -100,8 +104,8 @@ appears on the left side of the page.
 /*
     Remove all background/borders, since we are applying them to #menu.
     */
-#menu .pure-menu,
-#menu .pure-menu ul {
+#menu .menuContainer,
+#menu .menuContainer ul {
   border: none;
   background: transparent;
 }
@@ -109,36 +113,36 @@ appears on the left side of the page.
 /*
     Add that light border to separate items into groups.
     */
-#menu .pure-menu ul,
-#menu .pure-menu .menu-item-divided {
+#menu .menuContainer ul,
+#menu .menuContainer .menu-item-divided {
   border-top: 1px solid #333;
 }
 /*
         Change color of the anchor links on hover/focus.
         */
-#menu .pure-menu li a:hover,
-#menu .pure-menu li a:focus {
+#menu .menuContainer li a:hover,
+#menu .menuContainer li a:focus {
   background: #333;
 }
 
 /*
     This styles the selected menu item `<li>`.
     */
-#menu .pure-menu-selected,
-#menu .pure-menu-heading {
+
+#menu .menuHeading {
   background: #1f8dd6;
 }
 /*
         This styles a link within a selected menu item `<li>`.
         */
-#menu .pure-menu-selected a {
+#menu a {
   color: #fff;
 }
 
 /*
     This styles the menu heading.
     */
-#menu .pure-menu-heading {
+#menu .menuHeading {
   font-size: 110%;
   color: #fff;
   margin: 0;

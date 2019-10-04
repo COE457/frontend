@@ -1,12 +1,13 @@
+/*importing Archivo from google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
 
 /* gridContainer styles */
-
 .gridContainer {
-  padding: 0;
+  /* has no padding */
+  padding: 0; 
 }
 
-
+/* a <ul> will be a row of cards if it was a child of a grid container*/
 .gridContainer > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -15,21 +16,30 @@
   padding-left: 0;
 }
 
-
+/* a <li> will be a card if it was a child of a <ul> which is a child of a grid container*/
 .gridContainer > ul > li {
-  border: 1px solid #e2e2e2;
-  border-radius: 0.5rem;
-  box-shadow: 2.5px 5px 9px #888888;
+  border: 1px solid #e2e2e2;/*gray border*/
+  border-radius: 0.5rem;/*round edges*/
+  box-shadow: 2.5px 5px 9px #888888; /*shadow settings*/
 }
 
+/* the shadows of a card are disabled when pressed */
 .gridContainer > ul > li:active {
   box-shadow: none;
 }
 
+/* 
+every card has: 
+  - header
+  - body
+  - footer 
+*/
+
+/* The header on top*/
 .cardHeader {
-  width: 100%;
-  height: 40px;
-  position: relative;
+  width: 100%;/*same width as the card*/
+  height: 40px;/*static height*/
+  /* round top corners*/
   border-top-right-radius: 0.5rem;
   border-top-left-radius: 0.5rem;
   text-align: center;
@@ -38,22 +48,24 @@
   margin: 0;
 }
 
+/* <h3> text within header */
 .cardHeader > h3 {
-  font-size: 200%;
-  height: 100%;
-  font-family: 'Archivo', sans-serif;
+  font-size: 200%;/*scalable text size 4 times larger than the base*/
+  font-family: 'Archivo', sans-serif;/*using the imported font or sans-serif if not found*/
   color: #ffffff;
   margin: 0;
-  line-height: 40px;
+  line-height: 40px;/*to center it vertically*/
 }
 
+
+/* the body in the middle */
 .cardBody {
-  position: relative;
-  height: 75%;
   width: 100%;
-  text-align: center;
+  text-align: center; /*center text if any*/
 }
 
+
+/* setting the size and centering svg's and img's in the body */
 .cardBody > img, .cardBody > svg {
   width: 220px;
   height: 220px;
@@ -61,120 +73,25 @@
   display: block;
 }
 
+
+/* the footer at the bottom */
 .cardFooter {
   width: 100%;
-  height: 30px;
-  position: relative;
-  bottom: 0;
+  height: 30px;/*static height*/
+  /* round bottom corners*/
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   text-align: center;
+  /*no padding or margin*/
   padding: 0;
   margin: 0;
 }
 
 .cardFooter > h3 {
-  font-size: 175%;
+  font-size: 175%; /*smaller text than cardHeader > h3*/
   height: 100%;
   font-family: 'Archivo', sans-serif;
   color: #000000;
   margin: 0;
   line-height: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-.gridContainer > ul > li > .cardBody > figure {
-  overflow: hidden;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.gridContainer > ul > li > .cardBody > figure > img,
-.gridContainer > ul > li > .cardBody > figure > svg {
-  border: 0px;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  max-width: 220px;
-  max-height: 220px;
-  display: block;
-  margin: auto;
-}
-
-.gridContainer > ul > li > .cardBody:hover > figure > figcaption {
-  display: block;
-  position: absolute;
-  bottom: 5%;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-}
-
-.gridContainer > ul > li > .cardBody > h3{
-  display: none;
-}
-
-.gridContainer > ul > li > .cardBody:hover > h3 {
-  display: block;
-  position: absolute;
-  top: 5%;
-  margin: 0;
-  background-color: #777;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
-  color: white;
-}
-
-.gridContainer > ul > li > .cardBody > figure > figcaption > h3 {
-  color: white;
-  text-align: center;
-}
-
-.gridContainer > ul > li > .cardBody > p {
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 1rem 0.75rem;
-  color: #666666;
-  text-align: center;
-}
-
-.gridContainer > ul > li > .cardBody {
-  margin: 0;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-*/
-
-
-/* .cardBody {
-  height: 100%;
-  width: 100%;
-} */
-
-/* .gridContainer > ul > li > a {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-} */
