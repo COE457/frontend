@@ -1,4 +1,12 @@
-(function(window, document) {
+/**
+ * @file menu.js
+ *
+ * @overview
+ * This script is used to make the menu interface interactive in index.html
+ */
+
+(function(window, document) { //  wrapping the code in a function to avoid global variables
+  //selecting the needed DOM elements 
   var layout = document.getElementById("layout"),
     menu = document.getElementById("menu"),
     menuLink = document.getElementById("menuLink"),
