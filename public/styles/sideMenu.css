@@ -1,5 +1,49 @@
-body {
+.menuContainer {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.menuItem,
+.menuList {
+  position: relative;
+}
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menuItem {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.menuHeading,
+.menuLink {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menuItem .menuItem {
+  display: block;
+}
+
+.menuHeading {
+  text-transform: uppercase;
+  color: #565d64;
+}
+.menuLink {
   color: #777;
+}
+
+.menuHeading,
+.menuLink {
+  padding: 0.5em 1em;
+}
+
+.menuLink:focus,
+.menuLink:hover {
+  background-color: #eee;
 }
 
 .pure-img-responsive {
@@ -39,12 +83,7 @@ This is the parent `<div>` that contains the menu and the content area.
 /*
 The content `<div>` is where all your content goes.
 */
-#content {
-  margin: 0 auto;
-  padding: 0 2em;
-  margin-bottom: 50px;
-  line-height: 1.6em;
-}
+
 
 .header {
   margin: 0;
@@ -75,10 +114,6 @@ The content `<div>` is where all your content goes.
 The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
 appears on the left side of the page.
 */
-
-
-
-
 
 #menu {
   margin-left: -150px; /* "#menu" width */
@@ -124,10 +159,6 @@ appears on the left side of the page.
 #menu .menuContainer li a:focus {
   background: #333;
 }
-
-/*
-    This styles the selected menu item `<li>`.
-    */
 
 #menu .menuHeading {
   background: #1f8dd6;
@@ -244,10 +275,4 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     position: relative;
     left: 150px;
   }
-}
-
-.contents {
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }

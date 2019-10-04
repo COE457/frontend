@@ -1,0 +1,47 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+.tableContainer {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+.tableContainer caption {
+  color: #000;
+  font: italic 85%/1 arial, sans-serif;
+  padding: 1em 0;
+  text-align: center;
+}
+.tableContainer td,
+.tableContainer th {
+  border-left: 1px solid #cbcbcb;
+  border-width: 0 0 0 1px;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0.5em 1em;
+}
+.tableContainer thead {
+  background-color: #e0e0e0;
+  color: #000;
+  text-align: center;
+  vertical-align: bottom;
+}
+.tableContainer td {
+  background-color: transparent;
+}
+
+.tableContainer-odd td {
+  background-color: #f2f2f2;
+}
