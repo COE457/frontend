@@ -24,52 +24,60 @@
       if (element.id == "logout") {
         //if the user selects "Logout"
         localStorage.clear(); //  clear local storage
-        document.location.reload(); //  reload the page
-      } else {
-        console.log(element.id);
-        $("#content").load(element.id + ".html" + " #contents", () => {
-          //different actions based on selection
-          switch (element.id) {
-            case "home":
-              //@todo add functions and API calls to get actual data
-              break;
-
-            case "status":
-              /**
-               * @function t() <= thermometer.js
-               * @function h() <= heartRate.js
-               */
-              t("#thermometerRoom"); //  load room thermometer data @todo add API call to get actual reading
-              t("#thermometerBody"); //  load body thermometer data @todo add API call to get actual reading
-              h(); //  load heart rate data @todo add API call to get actual reading
-              //@todo add functions and API calls to get actual data
-              break;
-
-            case "location":
-              /** @function updateLocation() <= location.js */
-              updateLocation(); // generate locations table @todo add API call to get actual reading
-              break;
-
-            case "objects":
-              /** @function updateObjects() <= object.js */
-              updateObjects(); // generate objects table @todo add API call to get actual reading
-              break;
-
-            case "communication":
-              /** @function attachCommunicationFunctions() <= communication.js */
-              attachCommunicationFunctions();
-              break;
-
-            default:
-              break;
-          }
+        $("body").fadeOut('slow', () => { //  fade out the page
+          document.location.reload(); //  reload the page
         });
+        
+      } else {
+        $("#content")
+          .hide()
+          .load(element.id + ".html" + " #contents", () => {
+            //different actions based on selection
+            switch (element.id) {
+              case "home":
+                //@todo add functions and API calls to get actual data
+                break;
+
+              case "status":
+                /**
+                 * @function t() <= thermometer.js
+                 * @function h() <= heartRate.js
+                 */
+                t("#thermometerRoom"); //  load room thermometer data @todo add API call to get actual reading
+                t("#thermometerBody"); //  load body thermometer data @todo add API call to get actual reading
+                h(); //  load heart rate data @todo add API call to get actual reading
+                //@todo add functions and API calls to get actual data
+                break;
+
+              case "location":
+                /** @function updateLocation() <= location.js */
+                updateLocation(); // generate locations table @todo add API call to get actual reading
+                break;
+
+              case "objects":
+                /** @function updateObjects() <= object.js */
+                updateObjects(); // generate objects table @todo add API call to get actual reading
+                break;
+
+              case "communication":
+                /** @function attachCommunicationFunctions() <= communication.js */
+                attachCommunicationFunctions();
+                break;
+
+              default:
+                break;
+            }
+          })
+          .fadeIn("100");
 
         /**
          * adding an event listener to each menu link that changes the
          * contents of the content div to be (%id%.html)
          */
-        $("#pageTitle").html(element.id.replace(/^\w/, c => c.toUpperCase())); //changing the page title to that id (first letter capitalized)
+        $("#pageTitle")
+          .hide()
+          .html(element.id.replace(/^\w/, c => c.toUpperCase()))
+          .fadeIn("500"); //changing the page title to that id (first letter capitalized)
       }
     });
   });

@@ -5,12 +5,14 @@
  * This script is used to make the menu interface interactive in index.html
  */
 
-(function(window, document) { //  wrapping the code in a function to avoid global variables
-  //selecting the needed DOM elements 
+(function(window, document) {
+  //  wrapping the code in a function to avoid global variables
+  //selecting the needed DOM elements
   var layout = document.getElementById("layout"),
     menu = document.getElementById("menu"),
     menuLink = document.getElementById("menuLink"),
     content = document.getElementById("main");
+  let menuItems = document.getElementsByClassName("menuLink"); //  getting all menu links
 
   function toggleClass(element, className) {
     var classes = element.className.split(/\s+/),
@@ -49,5 +51,8 @@
       toggleAll(e);
     }
   };
-})(this, this.document);
 
+  [...menuItems].forEach(element => {
+    element.addEventListener("click", toggleAll); //  hiding the menu after click
+  });
+})(this, this.document);

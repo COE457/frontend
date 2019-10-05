@@ -5,12 +5,13 @@
 .gridContainer {
   /* has no padding */
   padding: 0; 
+  user-select: none;
 }
 
 /* a <ul> will be a row of cards if it was a child of a grid container*/
 .gridContainer > ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit /*currently available columns*/, minmax(320px, 1fr));/*size of every card is between 320px and 1 part of available space*/
   grid-gap: 1rem;
   list-style-type: none;
   padding-left: 0;
@@ -26,6 +27,7 @@
 /* the shadows of a card are disabled when pressed */
 .gridContainer > ul > li:active {
   box-shadow: none;
+  transform: scale(0.99);/*shrink a little bit when pressed*/
 }
 
 /* 

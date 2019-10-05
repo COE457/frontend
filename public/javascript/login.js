@@ -9,6 +9,7 @@
 
 
 //selecting the required DOM elements
+$("body").hide().fadeIn('500');
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
