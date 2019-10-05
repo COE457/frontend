@@ -22,12 +22,18 @@
   border: 1px solid #e2e2e2;/*gray border*/
   border-radius: 0.5rem;/*round edges*/
   box-shadow: 2.5px 5px 9px #888888; /*shadow settings*/
+  background: white;
 }
 
 /* the shadows of a card are disabled when pressed */
 .gridContainer > ul > li:active {
   box-shadow: none;
   transform: scale(0.99);/*shrink a little bit when pressed*/
+}
+
+.gridContainer > ul > li.unClickable:active {
+  box-shadow: 2.5px 5px 9px #888888;
+  transform: scale(1);
 }
 
 /* 
@@ -71,6 +77,8 @@ every card has:
 .cardBody > img, .cardBody > svg {
   width: 220px;
   height: 220px;
+  padding-top: 15px; 
+  padding-bottom: 15px; 
   margin: auto;
   display: block;
 }

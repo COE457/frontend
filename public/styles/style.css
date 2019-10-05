@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @keyframes slideInFromLeft {
+  /*slide in animation (bottom->top)*/
   0% {
     transform: translateY(100%);
   }
@@ -12,10 +14,50 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
   background: #f6f5f7;
   color: #777;
+}
+
+.header {
+  position: sticky;/*page title stays on top*/
+  margin: 0;
+  top:0;
+  color: #333;
+  text-align: center;
+  padding: 2em 2em 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: 1px 2px 4px #888888; /*shadow settings*/
+  background: white;
+  z-index: 5;
+}
+
+@media (max-width: 48em) {
+  .header{/*smaller header for smartphone*/
+    padding-top: 0.25em;
+    font-size: xx-small;
+    height: auto;
+  }
+  
+}
+
+#pageTitle {
+  font-family: Raleway, sans-serif;
+  font-weight: bolder;
+}
+
+.header h1 {
+  margin: 0.2em 0;
+  font-size: 3em;
+  font-weight: 300;
+}
+.header h2 {
+  font-weight: 300;
+  color: #ccc;
+  padding: 0;
+  margin-top: 0;
 }
 
 .contents {
@@ -25,9 +67,9 @@ body {
 }
 
 #content {
-  animation: 0.5s ease-out 0s 1 slideInFromLeft;
-  margin: 0 auto;
-  padding: 0 2em;
+  animation: 0.5s ease-out 0s 1 slideInFromLeft; /*animate the first time page is loaded*/
+  margin: auto;
+  padding: 0em 2em;
   margin-bottom: 50px;
   line-height: 1.6em;
 }

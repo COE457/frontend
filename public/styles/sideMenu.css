@@ -85,24 +85,7 @@ The content `<div>` is where all your content goes.
 */
 
 
-.header {
-  margin: 0;
-  color: #333;
-  text-align: center;
-  padding: 2.5em 2em 0;
-  border-bottom: 1px solid #eee;
-}
-.header h1 {
-  margin: 0.2em 0;
-  font-size: 3em;
-  font-weight: 300;
-}
-.header h2 {
-  font-weight: 300;
-  color: #ccc;
-  padding: 0;
-  margin-top: 0;
-}
+
 
 .content-subhead {
   margin: 50px 0 20px 0;
@@ -126,6 +109,8 @@ appears on the left side of the page.
   background: #191818;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 2.5px 5px 9px #888888;
+  z-index: 5;
 }
 /*
     All anchors inside the menu should be styled like this.
@@ -161,7 +146,9 @@ appears on the left side of the page.
 }
 
 #menu .menuHeading {
-  background: #1f8dd6;
+  background: white;
+  padding: 0;
+  height: 45px;
 }
 /*
         This styles a link within a selected menu item `<li>`.
@@ -173,10 +160,9 @@ appears on the left side of the page.
 /*
     This styles the menu heading.
     */
-#menu .menuHeading {
-  font-size: 110%;
-  color: #fff;
-  margin: 0;
+#menu .menuHeading > img{
+ height: 100%;
+ width: 100%; 
 }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
@@ -201,7 +187,7 @@ small screens.
   z-index: 10;
   width: 2em;
   height: auto;
-  padding: 2.1em 1.6em;
+  padding: 2.15em 1.6em;
 }
 
 .menu-link:hover,
