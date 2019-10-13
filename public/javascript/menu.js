@@ -3,6 +3,8 @@
  *
  * @overview
  * This script is used to make the menu interface interactive in index.html
+ * 
+ * @copyright https://purecss.io/layouts/side-menu/
  */
 
 (function(window, document) {
@@ -52,6 +54,9 @@
     }
   };
 
+  /**
+   * Added Line Here
+   */
   [...menuItems].forEach(element => {
     element.addEventListener("click", toggleAll); //  hiding the menu after click
   });
