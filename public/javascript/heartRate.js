@@ -1,6 +1,6 @@
 /**
  * @file heartRate.js
- *
+ * 
  * @overview
  * This script is used to generate the heart rate svg
  * Purposes: - use API call to get current heart rate

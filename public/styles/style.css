@@ -1,4 +1,6 @@
+/*general styling*/
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
 @keyframes slideInFromLeft {
   /*slide in animation (bottom->top)*/
   0% {
@@ -9,10 +11,9 @@
   }
 }
 
+
 html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-family: sans-serif;/*default font is sans-serif*/
 }
 
 body {
@@ -24,48 +25,34 @@ body {
 .header {
   position: sticky;/*page title stays on top*/
   margin: 0;
-  top:0;
+  top:0;/*exactly on top of the page*/
   color: #333;
   text-align: center;
-  padding: 2em 2em 0;
-  border-bottom: 1px solid #eee;
+  padding: 2em 2em 0; /*no padding in the bottom*/
+  border-bottom: 1px solid #eee; /*a solid white border in the bottom*/
   box-shadow: 1px 2px 4px #888888; /*shadow settings*/
   background: white;
-  z-index: 5;
+  z-index: 5;/*to ensure it's always on top*/
 }
 
-@media (max-width: 48em) {
-  .header{/*smaller header for smartphone*/
+@media (max-width: 48em) {/*smaller header for smartphone and small screen*/
+  .header{
     padding-top: 0.25em;
     font-size: xx-small;
     height: auto;
   }
-  
 }
 
+/*settings for page title*/
 #pageTitle {
-  font-family: Raleway, sans-serif;
-  font-weight: bolder;
-}
-
-.header h1 {
   margin: 0.2em 0;
   font-size: 3em;
   font-weight: 300;
-}
-.header h2 {
-  font-weight: 300;
-  color: #ccc;
-  padding: 0;
-  margin-top: 0;
+  font-family: Raleway, sans-serif;/*using the google font for the title, sans-serif if not found*/
+  font-weight: bolder;
 }
 
-.contents {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
+/*rules for the area were html contents will be loaded*/
 #content {
   animation: 0.5s ease-out 0s 1 slideInFromLeft; /*animate the first time page is loaded*/
   margin: auto;

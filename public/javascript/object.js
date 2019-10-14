@@ -1,6 +1,6 @@
 /**
  * @file object.js
- *
+ * 
  * @overview
  * This script is used to process objects
  * Purposes: - use API calls to fetch a set of latest objects
