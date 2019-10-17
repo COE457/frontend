@@ -1,3 +1,6 @@
+/*for styling tables*/
+/*used in {location,objects}.html*/
+/*@copyright https://purecss.io/layouts/side-menu/*/
 table {
   border-collapse: collapse;
   border-spacing: 0;

@@ -1,5 +1,5 @@
 /**
- * @file location.js
+ * @file location.js 
  *
  * @overview
  * This script is used to process locations

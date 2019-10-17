@@ -5,6 +5,9 @@
  * This script is used to add functionality to login.html
  * Purposes: - to make the different buttons in the page usable
  * 			 - to request an authentication token from the API
+ * 
+ * @copyright https://codepen.io/FlorinPop17/pen/vPKWjd
+ * 
  */
 
 

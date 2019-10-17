@@ -1,3 +1,6 @@
+/* for styling cards */
+/* used in all html files except for index.html */
+
 /*importing Archivo from google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Archivo&display=swap');
 
@@ -25,12 +28,13 @@
   background: white;
 }
 
-/* the shadows of a card are disabled when pressed */
+/* the shadows of a card are disabled when clicked */
 .gridContainer > ul > li:active {
   box-shadow: none;
   transform: scale(0.99);/*shrink a little bit when pressed*/
 }
 
+/* to make unclickable cards */
 .gridContainer > ul > li.unClickable:active {
   box-shadow: 2.5px 5px 9px #888888;
   transform: scale(1);

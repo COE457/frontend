@@ -1,4 +1,5 @@
-/* @file server.js 
+/** 
+ * @file server.js 
  * 
  * @overview
  * This file is used to serve the frontend

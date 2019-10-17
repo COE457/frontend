@@ -1,6 +1,6 @@
 /**
  * @file heartRate.js
- *
+ * 
  * @overview
  * This script is used to generate the heart rate svg
  * Purposes: - use API call to get current heart rate
@@ -26,8 +26,7 @@ function h() {
     svg
       .select("#bps")
       .attr({ text: "75.0" /*dummy*/ }) //  changing the text in the heart.svg
-      .attr({ "font-size": "55px" }) //  styling the text
-      .attr({ "font-family": "sans-serif" })
-      .attr({ "font-weight": "bold" }); 
+      .attr({ "font-size": "47px" }) //  readable text size
+      .attr({"font-weight": "bold"}); //  bolding the text
   });
 }

@@ -5,6 +5,7 @@
  * This script is used to add functionality to the navigation menu in index.html
  * Purposes: - to make the different items in the menu usable
  * 			     - to alter index.html based on menu selections
+ *           - determining refresh behaviour
  * Assumptions: - thermometer.js has loaded
  *              - heartRate.js has loaded
  *              - thermometer.js has loaded
@@ -49,6 +50,15 @@
     });
   });
 
+  /**
+   * @function applyAndFetch
+   * @description calls the appropriate function(s) based on <page>
+   * @param {string} page
+   * @fires t()
+   * @fires h()
+   * @fires updateLocation()
+   * @fires attachCommunicationFunctions()
+   */
   function applyAndFetch(page) {
     switch (page) {
       case "home":
@@ -86,11 +96,18 @@
     }
   }
 
+  /**
+   * @function firstLoad
+   * @description checks localStorage before loading the page
+   * @fires applyAndFetch()
+   */
   function firstLoad() {
-    if (!localStorage.getItem("latestPage"))  {//  logging out returns to home page
+    if (!localStorage.getItem("latestPage")) {
+      //  logging out returns to home page
       $("#content").load("home.html #contents"); // loads home at GET '/'
       $("#pageTitle").html("Home");
-    } else { //  refreshing returns to the latest page
+    } else {
+      //  refreshing returns to the latest page
       let latestPage = localStorage.getItem("latestPage");
       $("#content").load(latestPage + ".html #contents", () => {
         applyAndFetch(latestPage);
