@@ -1,4 +1,12 @@
-//acquired from https://codepen.io/mjimeyg/pen/oJMzbz?editors=1010
+/**
+ * @file thermometer.js
+ * 
+ * @overview
+ * generates an svg image with a thermometer and reading
+ * 
+ * @copyright https://codepen.io/mjimeyg/pen/oJMzbz?editors=1010
+ */
+
 class Thermometer {
 	// Declared global variables
 	
@@ -183,5 +191,11 @@ class Thermometer {
 	}
 }
 
+/**
+ * @function t
+ * @description creates a new thermometer object
+ * @param {string} thermo the id of the DOM element that displays the thermometer
+ * @fires Thermometer the constructor of a thermometer object
+ */
 const t = thermo => {new Thermometer(thermo, 36.9, 30, 43, 200, 50, false)};
 

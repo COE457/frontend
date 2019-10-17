@@ -3,6 +3,9 @@
  *
  * @overview
  * This script is used to make the menu interface interactive in index.html
+ * 
+ * @copyright https://codepen.io/FlorinPop17/full/vPKWjd
+ * 
  */
 
 (function(window, document) {
