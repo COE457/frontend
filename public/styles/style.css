@@ -1,7 +1,7 @@
 /*general styling*/
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
-@keyframes slideInFromLeft {
+@keyframes slideInFromDown {
   /*slide in animation (bottom->top)*/
   0% {
     transform: translateY(100%);
@@ -54,7 +54,7 @@ body {
 
 /*rules for the area were html contents will be loaded*/
 #content {
-  animation: 0.5s ease-out 0s 1 slideInFromLeft; /*animate the first time page is loaded*/
+  animation: 0.5s ease-out 0s 1 slideInFromDown; /*animate the first time page is loaded*/
   margin: auto;
   padding: 0em 2em;
   margin-bottom: 50px;
