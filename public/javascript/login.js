@@ -33,3 +33,29 @@ document.getElementById("tmpSignIn").addEventListener('click', ()=>{
 	localStorage.setItem("dummy", "item");  // dummy login
 	window.location.href = "/";
 })
+
+
+document.getElementById("tmpSignUp").addEventListener('click', ()=>{
+	var body = {
+		username: $("#username")[0].value,
+		email: $("#email")[0].value,
+		password: $("#password")[0].value,
+		phoneNumber: $("#phoneNumber")[0].value,
+	}
+
+	$.ajax({
+		url: 'http://localhost:3001/API/parent/create',
+		dataType: 'json',
+		type: 'post',
+		contentType: 'application/json',
+		data: JSON.stringify(body),
+		processData: false,
+		success: function( data, textStatus, jQxhr ){
+			alert("User added successfully. Please login to continue")
+			window.location.href = "/";
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			console.log(errorThrown);
+		}
+	});
+})

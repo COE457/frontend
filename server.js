@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 
+
 /******serving the other required files when needed**************/
 app.get("/home.html", (req, res) => {
     res.sendFile(path.resolve('./public/html/home.html'));
