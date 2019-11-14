@@ -56,7 +56,8 @@ document.getElementById("tmpSignIn").addEventListener('click', e => {
 })
 
 
-document.getElementById("tmpSignUp").addEventListener('click', ()=>{
+document.getElementById("tmpSignUp").addEventListener('click', e =>{
+	e.preventDefault();
 	var body = {
 		username: $("#username")[0].value,
 		email: $("#email")[0].value,

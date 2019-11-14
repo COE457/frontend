@@ -1,5 +1,5 @@
 /**
- * @file location.js 
+ * @file location.js
  *
  * @overview
  * This script is used to process locations
@@ -13,7 +13,7 @@
  * @fires genLocationTableBody()
  * @fires fetchLocations()
  */
-const updateLocation = () => {
+const updateLocation = async () => {
   const locationTableHead = // the table head
     "<thead>\
         <tr>\
@@ -22,9 +22,12 @@ const updateLocation = () => {
             <th>Currently There</th>\
         </tr>\
     </thead>";
-  $("#locationTable") //  selecting the table DOM element
-    .empty() //  clearing the table DOM element
-    .append(locationTableHead + genLocationTableBody(fetchLocations())); //  filling the table DOM element
+
+  fetchLocations().then(locations => {
+    $("#locationTable") //  selecting the table DOM element
+      .empty() //  clearing the table DOM element
+      .append(locationTableHead + genLocationTableBody(locations.docs)); //  filling the table DOM element
+  });
 };
 
 /**
@@ -34,27 +37,14 @@ const updateLocation = () => {
  * @return {Array<Object>}
  */
 const fetchLocations = () => {
-  /**
-   * @todo use API calls to fetch the locations and replace the dummy return with them
-   */
-  return [
-    //  dummy return
-    {
-      location: "bedroom",
-      date: "12/09/2019 10:30:15",
-      currentlyThere: true
-    },
-    {
-      location: "kitchen",
-      date: "12/09/2019 10:25:33",
-      currentlyThere: false
-    },
-    {
-      location: "bathroom",
-      date: "12/09/2019 10:20:01",
-      currentlyThere: false
-    }
-  ];
+  return $.ajax({
+    url: "http://localhost:3001/API/locationHistory/read",
+    dataType: "json",
+    type: "get",
+    contentType: "application/json",
+    data: {},
+    processData: false
+  });
 };
 
 /**
@@ -70,7 +60,7 @@ function genLocationTableBody(data) {
     //sorting the data in html table tags
     tmp += "<tr>";
     tmp += "<td>" + element["location"] + "</td>";
-    tmp += "<td>" + element["date"] + "</td>";
+    tmp += "<td>" + new Date(element["date"]) + "</td>";
     tmp += "<td>" + (element["currentlyThere"] ? "&#x2714;" : "") + "</td>"; //  using tick mark for true and nothing for false
     tmp += "</tr>";
   });

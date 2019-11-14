@@ -1,13 +1,13 @@
 const showModal = () => {
-    $("#modalContainer").fadeIn("slow");
-}
+  $("#modalContainer").fadeIn("slow");
+};
 
 const hideModal = () => {
-    $("#modalContainer").fadeOut("slow");
-}
+  $("#modalContainer").fadeOut("slow");
+};
 
 $("body").keydown(e => {
-    if(e.keyCode === 27){
-        hideModal();
-    }
-})
+  if (e.keyCode === 27) {
+    hideModal();
+  }
+});

@@ -8,7 +8,7 @@
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1200;
   padding: 0;
 }
@@ -18,15 +18,9 @@
   margin-top: 10%;
   width: 35%;
   height: auto;
-  background: whitesmoke;
+  background: #e2e2e2;
   border-radius: 0.5rem;
-  box-shadow: 2.5px 5px 9px #888888; /*shadow settings*/
-}
-
-@media (max-width: 58em) {
-  #modal {
-    width: 80%;
-  }
+  box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
 }
 
 #form {
@@ -118,4 +112,14 @@
 #formFooter {
   position: absolute;
   bottom: 0;
+}
+
+@media (max-width: 58em) {
+  #modal {
+    width: 80%;
+  }
+
+  #formFooter > button {
+    width: 49%;
+  }
 }

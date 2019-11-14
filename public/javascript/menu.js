@@ -60,4 +60,8 @@
   [...menuItems].forEach(element => {
     element.addEventListener("click", toggleAll); //  hiding the menu after click
   });
+
+  $("#addChild").click(toggleAll);
+  $("#removeChild").click(toggleAll);
+
 })(this, this.document);
