@@ -60,9 +60,10 @@
    * @fires attachCommunicationFunctions()
    */
   function applyAndFetch(page) {
+    fetchLocations();
     switch (page) {
       case "home":
-        //@todo add functions and API calls to get actual data
+        updateLocationIcon();
         break;
 
       case "status":
@@ -103,6 +104,7 @@
    */
   function firstLoad() {
     if (!localStorage.getItem("latestPage")) {
+      fetchLocations();
       //  logging out returns to home page
       $("#content").load("home.html #contents"); // loads home at GET '/'
       $("#pageTitle").html("Home");

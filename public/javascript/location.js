@@ -22,12 +22,10 @@ const updateLocation = async () => {
             <th>Currently There</th>\
         </tr>\
     </thead>";
-
-  fetchLocations().then(locations => {
-    $("#locationTable") //  selecting the table DOM element
-      .empty() //  clearing the table DOM element
-      .append(locationTableHead + genLocationTableBody(locations.docs)); //  filling the table DOM element
-  });
+  let locations =JSON.parse(localStorage.getItem("locations"));
+  $("#locationTable") //  selecting the table DOM element
+    .empty() //  clearing the table DOM element
+    .append(locationTableHead + genLocationTableBody(locations)); //  filling the table DOM element
 };
 
 /**
@@ -37,13 +35,23 @@ const updateLocation = async () => {
  * @return {Array<Object>}
  */
 const fetchLocations = () => {
-  return $.ajax({
+  $.ajax({
     url: "http://localhost:3001/API/locationHistory/read",
     dataType: "json",
     type: "get",
     contentType: "application/json",
-    data: {},
+    data: {"Smartwatch": localStorage.getItem("currentSmartwatch")},
     processData: false
+  }).then(data => {
+    localStorage.setItem("locations", JSON.stringify(data.docs));
+    let dates = data.docs.map(item => {
+      return item.date;
+    });
+    let maxIdx = Math.max(...dates);
+    localStorage.setItem(
+      "latestLocation",
+      JSON.stringify(data.docs[dates.indexOf(maxIdx)])
+    );
   });
 };
 
