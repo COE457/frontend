@@ -23,7 +23,7 @@
   box-shadow: 2.5px 5px 9px #888888; /*shadow settings*/
 }
 
-@media (max-width: 48em) {
+@media (max-width: 58em) {
   #modal {
     width: 80%;
   }

@@ -6,7 +6,7 @@ const hideModal = () => {
     $("#modalContainer").fadeOut("slow");
 }
 
-$("body").keyup(e => {
+$("body").keydown(e => {
     if(e.keyCode === 27){
         hideModal();
     }
