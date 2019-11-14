@@ -25,13 +25,34 @@ signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");  // activating the signIn form
 });
 
-document.getElementById("tmpSignIn").addEventListener('click', ()=>{
+document.getElementById("tmpSignIn").addEventListener('click', e => {
 	/**
 	 * @todo
-	 * request a token from the API here 
+	 * implement properly
 	 */
-	localStorage.setItem("dummy", "item");  // dummy login
-	window.location.href = "/";
+	e.preventDefault();
+	$.ajax({
+		url: 'http://localhost:3001/API/parent/read',
+		type: 'get',
+		contentType: 'application/json',
+		data: {
+			"username": "parent1"
+		},
+		success: function( data, textStatus, jQxhr ){
+			if(data.docs.length > 0){
+				alert("Login successful");
+				localStorage.setItem("userID", data.docs[0]._id);
+				localStorage.setItem("username", "parent1");
+			}
+			window.location.href = "/";
+			
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			console.log(errorThrown);
+			window.location.href = "/";
+		}
+	});
+	
 })
 
 
