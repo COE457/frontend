@@ -9,7 +9,7 @@
 		success: function( data, textStatus, jQxhr ){
             data.docs.forEach(element => {
                 $("#currentChild").append(
-                    `<option value=${element._id}> ${element.name} </option>`
+                    `<option value=${element.name}> ${element.name} </option>`
                 )
             });
 		},

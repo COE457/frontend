@@ -47,12 +47,16 @@ app.get("/communication.html", (req, res) => {
     res.sendFile(path.resolve('./public/html/communication.html'));
 });
 
+app.get("/login", (req, res) => {
+    res.sendFile(path.resolve('./public/html/login.html'));
+});
+
 app.get("/addChild.html", (req, res) => {
     res.sendFile(path.resolve('./public/html/addChild.html'));
 });
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.resolve('./public/html/login.html'));
+app.get("/removeChild.html", (req, res) => {
+    res.sendFile(path.resolve('./public/html/removeChild.html'));
 });
 
 /*******************************************************************/

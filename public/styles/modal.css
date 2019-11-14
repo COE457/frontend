@@ -16,8 +16,8 @@
 #modal {
   margin: auto;
   margin-top: 10%;
-  width: 45%;
-  height: 60%;
+  width: 35%;
+  height: auto;
   background: whitesmoke;
   border-radius: 0.5rem;
   box-shadow: 2.5px 5px 9px #888888; /*shadow settings*/
@@ -52,7 +52,7 @@
   margin: 0;
 }
 
-#formHeader > h3 {
+#formHeader > h3 {  height: 100%;
   font-size: 200%; /*scalable text size 4 times larger than the base*/
   font-family: "Archivo", sans-serif; /*using the imported font or sans-serif if not found*/
   color: #ffffff;
@@ -97,8 +97,8 @@
 
 #formBody {
   position: absolute;
-  top: 15%;
-  padding: 10px;
+  top: 35%;
+  margin: 10px;
   height: auto;
 }
 
