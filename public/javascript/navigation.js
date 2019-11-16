@@ -60,11 +60,12 @@
    * @fires attachCommunicationFunctions()
    */
   function applyAndFetch(page) {
-    fetchLocations();
     switch (page) {
       case "home":
-        fetchLocations();
-        updateLocationIcon();
+        fetchLocations().then(() => {
+          updateLocationIcon();
+        })
+        equipt();
         break;
 
       case "status":
@@ -107,6 +108,7 @@
       //  logging out returns to home page
       $("#content").load("home.html #contents"); // loads home at GET '/'
       $("#pageTitle").html("Home");
+      applyAndFetch("home")
     } else {
       //  refreshing returns to the latest page
       let latestPage = localStorage.getItem("latestPage");
