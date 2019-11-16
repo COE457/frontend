@@ -5,7 +5,7 @@
       showModal();
       $("#leftButton").click(e => {
         $.ajax({
-          url: "http://localhost:3001/API/child/create",
+          url: "http://192.168.137.1:3001/API/child/create",
           dataType: "json",
           type: "post",
           contentType: "application/json",
@@ -18,7 +18,7 @@
             console.log("Child added successfully, adding smartwatch...");
             console.log(data);
             $.ajax({
-              url: "http://localhost:3001/API/smartwatch/create",
+              url: "http://192.168.137.1:3001/API/smartwatch/create",
               dataType: "json",
               type: "post",
               contentType: "application/json",
@@ -58,7 +58,7 @@
 
       $("#leftButton").click(e => {
         $.ajax({
-          url: "http://localhost:3001/API/child/destroy",
+          url: "http://192.168.137.1:3001/API/child/destroy",
           dataType: "json",
           type: "delete",
           contentType: "application/json",

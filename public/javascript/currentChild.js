@@ -1,6 +1,6 @@
 ((window, document) => {
     $.ajax({
-		url: 'http://localhost:3001/API/child/read',
+		url: 'http://192.168.137.1:3001/API/child/read',
 		type: 'get',
 		contentType: 'application/json',
 		data: {
@@ -22,7 +22,7 @@
     $("#currentChild").change(() => {
         localStorage.setItem("currentChild", $("#currentChild").val())
         $.ajax({
-            url: 'http://localhost:3001/API/smartwatch/read',
+            url: 'http://192.168.137.1:3001/API/smartwatch/read',
             type: 'get',
             contentType: 'application/json',
             data: {

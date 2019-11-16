@@ -36,7 +36,7 @@ const updateLocation = async () => {
  */
 const fetchLocations = () => {
   $.ajax({
-    url: "http://localhost:3001/API/locationHistory/read",
+    url: "http://192.168.137.1:3001/API/locationHistory/read",
     dataType: "json",
     type: "get",
     contentType: "application/json",

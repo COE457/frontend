@@ -11,36 +11,36 @@
   }
 }
 
-
 html {
-  font-family: sans-serif;/*default font is sans-serif*/
-
+  font-family: sans-serif; /*default font is sans-serif*/
 }
 
 body {
   margin: 0;
   background: #f6f5f7;
   color: #777;
+  background-image: url("../images/background.JPG");
 }
 
 .header {
-  position: sticky;/*page title stays on top*/
+  position: sticky; /*page title stays on top*/
   margin: auto;
-  top:0;/*exactly on top of the page*/
+  top: 0; /*exactly on top of the page*/
   color: #333;
   text-align: center;
-  padding: 2em 2em 2em; /*no padding in the bottom*/
+  padding: 0.5em 0.5em 0.5em; 
   width: 35%; /*width title */
-  border-radius: 0.5rem;/*round edges*/
+  border-radius: 0.5rem; /*round edges*/
   border-bottom: 1px solid #eee; /*a solid white border in the bottom*/
   box-shadow: 1px 2px 4px #888888; /*shadow settings*/
 
   background: white;
-  z-index: 5;/*to ensure it's always on top*/
+  z-index: 5; /*to ensure it's always on top*/
 }
 
-@media (max-width: 48em) {/*smaller header for smartphone and small screen*/
-  .header{
+@media (max-width: 48em) {
+  /*smaller header for smartphone and small screen*/
+  .header {
     padding-top: 0.25em;
     font-size: xx-small;
     height: auto;
@@ -52,7 +52,7 @@ body {
   margin: 0.2em 0;
   font-size: 3em;
   font-weight: 300;
-  font-family: Raleway, sans-serif;/*using the google font for the title, sans-serif if not found*/
+  font-family: Raleway, sans-serif; /*using the google font for the title, sans-serif if not found*/
   font-weight: bolder;
 }
 

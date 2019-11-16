@@ -32,7 +32,7 @@ document.getElementById("tmpSignIn").addEventListener('click', e => {
 	 */
 	e.preventDefault();
 	$.ajax({
-		url: 'http://localhost:3001/API/parent/read',
+		url: 'http://192.168.137.1:3001/API/parent/read',
 		type: 'get',
 		contentType: 'application/json',
 		data: {
@@ -66,7 +66,7 @@ document.getElementById("tmpSignUp").addEventListener('click', e =>{
 	}
 
 	$.ajax({
-		url: 'http://localhost:3001/API/parent/create',
+		url: 'http://192.168.137.1:3001/API/parent/create',
 		dataType: 'json',
 		type: 'post',
 		contentType: 'application/json',

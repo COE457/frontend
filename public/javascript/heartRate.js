@@ -1,6 +1,6 @@
 /**
  * @file heartRate.js
- * 
+ *
  * @overview
  * This script is used to generate the heart rate svg
  * Purposes: - use API call to get current heart rate
@@ -17,28 +17,34 @@
 
 function h() {
   /**@function Snap() <= snap.svg-min.js */
-    $.ajax({
-    url: "http://localhost:3001/API/locationHistory/read",
+  $.ajax({
+    url: "http://192.168.137.1:3001/API/heartrateHistory/read",
     dataType: "json",
     type: "get",
     contentType: "application/json",
-    data: {"Smartwatch": localStorage.getItem("currentSmartwatch")},
+    data: { Smartwatch: localStorage.getItem("currentSmartwatch") },
     processData: false,
-        success: data => {
-            let svg = Snap("#heartRate"); //  selecting a svg DOM element
-  Snap.load("../images/heart.svg", f => {
-    //  loading heart.svg
-    svg.append(f.select("#usable")); //  appending the needed part from heart.svg to #heartRate
-    /**
-     * @todo API call to get heart rate and use it in the next line instead of the dummy value
-     */
-    svg
-      .select("#bps")
-      .attr({ text: data.docs[docs.length - 1].reading /*dummy*/ }) //  changing the text in the heart.svg
-      .attr({ "font-size": "47px" }) //  readable text size
-      .attr({"font-weight": "bold"}); //  bolding the text
-  });
+    success: data => {
+      console.log(data.docs);
+      let svg = Snap("#heartRate"); //  selecting a svg DOM element
+      Snap.load("../images/heart.svg", f => {
+        //  loading heart.svg
+        svg.append(f.select("#usable")); //  appending the needed part from heart.svg to #heartRate
+        /**
+         * @todo API call to get heart rate and use it in the next line instead of the dummy value
+         */
+        let HR = data.docs[data.docs.length - 1].reading;
+        for(var i = 2; i <= data.docs.length; i++) {
+          if(HR <= 0) {
+            HR = data.docs[data.docs.length - i].reading;
+          }
         }
-  })
-  
+        svg
+          .select("#bps")
+          .attr({ text: HR + "bpm" }) //  changing the text in the heart.svg
+          .attr({ "font-size": "47px" }) //  readable text size
+          .attr({ "font-weight": "bold" }); //  bolding the text
+      });
+    }
+  });
 }

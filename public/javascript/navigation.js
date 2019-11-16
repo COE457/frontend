@@ -63,6 +63,7 @@
     fetchLocations();
     switch (page) {
       case "home":
+        fetchLocations();
         updateLocationIcon();
         break;
 
@@ -72,7 +73,6 @@
          * @function h() <= heartRate.js
          */
         t("#thermometerRoom"); //  load room thermometer data @todo add API call to get actual reading
-        t("#thermometerBody"); //  load body thermometer data @todo add API call to get actual reading
         h(); //  load heart rate data @todo add API call to get actual reading
         //@todo add functions and API calls to get actual data
         break;
@@ -104,7 +104,6 @@
    */
   function firstLoad() {
     if (!localStorage.getItem("latestPage")) {
-      fetchLocations();
       //  logging out returns to home page
       $("#content").load("home.html #contents"); // loads home at GET '/'
       $("#pageTitle").html("Home");
