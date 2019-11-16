@@ -14,9 +14,18 @@
  * @description prepares a JSON to be sent on button press
  * @fires SOME_API_CALL
  */
+
 function h() {
   /**@function Snap() <= snap.svg-min.js */
-  let svg = Snap("#heartRate"); //  selecting a svg DOM element
+    $.ajax({
+    url: "http://localhost:3001/API/locationHistory/read",
+    dataType: "json",
+    type: "get",
+    contentType: "application/json",
+    data: {"Smartwatch": localStorage.getItem("currentSmartwatch")},
+    processData: false,
+        success: data => {
+            let svg = Snap("#heartRate"); //  selecting a svg DOM element
   Snap.load("../images/heart.svg", f => {
     //  loading heart.svg
     svg.append(f.select("#usable")); //  appending the needed part from heart.svg to #heartRate
@@ -25,8 +34,11 @@ function h() {
      */
     svg
       .select("#bps")
-      .attr({ text: "75.0" /*dummy*/ }) //  changing the text in the heart.svg
+      .attr({ text: data.docs[docs.length - 1].reading /*dummy*/ }) //  changing the text in the heart.svg
       .attr({ "font-size": "47px" }) //  readable text size
       .attr({"font-weight": "bold"}); //  bolding the text
   });
+        }
+  })
+  
 }

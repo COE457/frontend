@@ -14,6 +14,7 @@
 
 html {
   font-family: sans-serif;/*default font is sans-serif*/
+
 }
 
 body {
@@ -24,13 +25,16 @@ body {
 
 .header {
   position: sticky;/*page title stays on top*/
-  margin: 0;
+  margin: auto;
   top:0;/*exactly on top of the page*/
   color: #333;
   text-align: center;
-  padding: 2em 2em 0; /*no padding in the bottom*/
+  padding: 2em 2em 2em; /*no padding in the bottom*/
+  width: 35%; /*width title */
+  border-radius: 0.5rem;/*round edges*/
   border-bottom: 1px solid #eee; /*a solid white border in the bottom*/
   box-shadow: 1px 2px 4px #888888; /*shadow settings*/
+
   background: white;
   z-index: 5;/*to ensure it's always on top*/
 }
