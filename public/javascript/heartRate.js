@@ -33,10 +33,10 @@ function h() {
         /**
          * @todo API call to get heart rate and use it in the next line instead of the dummy value
          */
-        let HR = data.docs[data.docs.length - 1].reading;
+        let HR = data.docs[data.docs.length - 1].reading[0];
         for(var i = 2; i <= data.docs.length; i++) {
           if(HR <= 0) {
-            HR = data.docs[data.docs.length - i].reading;
+            HR = data.docs[data.docs.length - i].reading[0];
           }
         }
         svg
