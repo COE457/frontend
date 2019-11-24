@@ -21,11 +21,10 @@
       /**
        * @todo replace with a valid condition
        */
-        if (localStorage.length === 0) {
-      // if the user is NOT logged in
-          window.location.href = "/login"; // redirect to the login page
-        }
-      
+      if (localStorage.length === 0) {
+        // if the user is NOT logged in
+        window.location.href = "/login"; // redirect to the login page
+      }
     </script>
     <!-------------------------------------------------------------->
 
@@ -46,12 +45,14 @@
     <link rel="stylesheet" href="../styles/sideMenu.css" />
     <link rel="stylesheet" href="../styles/grid.css" />
     <link rel="stylesheet" href="../styles/table.css" />
+    <link rel="stylesheet" href="../styles/loading.css" />
     <!----------------------------------------------------->
   </head>
   <body>
     <!-- a modal that could be used for dialogs and forms -->
 
     <div id="modalContainer">
+      <div id="loading"><div class="loader"></div></div>
       <div id="modal">
         <div id="modalBody"></div>
       </div>
@@ -122,17 +123,26 @@
       </div>
     </div>
     <!-- loading js files  -->
-    <script src="../javascript/modal.js"></script>
-    <script src="../javascript/manageSmartwatch.js"></script>
-    <script src="../javascript/currentChild.js"></script>
+
+    <!-- loading interface scripts -->
+    <script src="../javascript/interface/menu.js"></script>
+    <script src="../javascript/interface/navigation.js"></script>
+    <script src="../javascript/interface/modal.js"></script>
+
+    <!-- loading db scripts -->
+    <!-- database configuration -->
+    <script src="../javascript/db/config/dbParams.js"></script>
+
+    <!-- database service layer -->
+    <script src="../javascript/db/services/child.js"></script>
+
+    <!-- database action layer -->
+    <script src="../javascript/db/actions/child.js"></script>
+    <!--------------------------->
+    <!-- loading view change detector -->
+    <script src="../javascript/updates/refresh.js"></script>
+    <script src="../javascript/updates/viewLoad.js"></script>
+
     <script src="../javascript/location.js"></script>
-    <script src="../javascript/object.js"></script>
-    <script src="../javascript/thermometer.js"></script>
-    <script src="../javascript/heartRate.js"></script>
-    <script src="../javascript/communication.js"></script>
-    <script src="../javascript/menu.js"></script>
-    <script src="../javascript/home.js"></script>
-    <script src="../javascript/navigation.js"></script>
-    
   </body>
 </html>

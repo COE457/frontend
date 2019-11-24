@@ -10,7 +10,7 @@
  * @fires createChildSvc
  * @description uses createChildSvc() to send new child data to the database
  */
-const createChild = async data => {
+const createChild = async (data) => {
   try {
     const child = await createChildSvc(data);
     return child;
@@ -25,7 +25,7 @@ const createChild = async data => {
  * @fires destroyChildSvc
  * @description uses destroyChildSvc() to send new child data to the database
  */
-const destroyChild = async data => {
+const destroyChild = async (data) => {
   try {
     const child = await destroyChildSvc(data);
     return child;
@@ -40,7 +40,7 @@ const destroyChild = async data => {
  * @fires readChildSvc
  * @description uses readChildSvc() to send new child data to the database
  */
-const readChild = async data => {
+const readChild = async (data) => {
     try {
       const child = await readChildSvc(data);
       return child;

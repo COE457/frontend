@@ -24,39 +24,39 @@ app.get("/", (req, res) => {
 
 /******serving the other required files when needed**************/
 app.get("/home.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/home.html'));
+    res.sendFile(path.resolve('./public/html/components/views/home.html'));
 });
 
 app.get("/status.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/status.html'));
+    res.sendFile(path.resolve('./public/html/components/views/status.html'));
 });
 
 app.get("/location.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/location.html'));
+    res.sendFile(path.resolve('./public/html/components/views/location.html'));
 });
 
 app.get("/objects.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/objects.html'));
+    res.sendFile(path.resolve('./public/html/components/views/objects.html'));
 });
 
 app.get("/communication.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/communication.html'));
+    res.sendFile(path.resolve('./public/html/components/views/communication.html'));
 });
 
 app.get("/communication.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/communication.html'));
+    res.sendFile(path.resolve('./public/html/components/views/communication.html'));
 });
 
 app.get("/login", (req, res) => {
-    res.sendFile(path.resolve('./public/html/login.html'));
+    res.sendFile(path.resolve('./public/html/components/views/login.html'));
 });
 
 app.get("/addChild.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/addChild.html'));
+    res.sendFile(path.resolve('./public/html/components/modals/addChild.html'));
 });
 
 app.get("/removeChild.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/removeChild.html'));
+    res.sendFile(path.resolve('./public/html/components/views/removeChild.html'));
 });
 
 /*******************************************************************/

@@ -1,5 +1,5 @@
 /**
- * @file menu.js
+ * @file interface/menu.js
  * 
  * @overview
  * This script is used to make the menu interface interactive in index.html
