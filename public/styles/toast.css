@@ -1,38 +1,57 @@
 #notification {
   position: fixed;
   right: 0;
-  background-color: #555;
+  background-color: #e2e2e2;
   color: white;
   text-decoration: none;
   padding: 7.5px 13px;
   border-radius: 2px;
   z-index: 50;
+  border-radius: 50%;
+  margin: 25px;
+  box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
+}
+
+#notification > img {
+  border-radius: 50%;
+  width: 15px;
+  padding: 0;
+  margin: auto;
 }
 
 #notification #badge {
   position: absolute;
-  bottom: -10px;
-  left: -10px;
-  padding: 5px 10px;
+  bottom: -5px;
+  left: -5px;
+  padding: 2px 7px;
   border-radius: 50%;
   background: red;
   color: white;
+  font-size: 70%;
+  text-align: center;
 }
 
 #toastContainer {
   position: absolute;
-  top: 50px;
+  top: 75px;
   right: 15px;
   width: 30%;
   z-index: 6;
+  overflow-x: visible;
+  overflow-y: scroll;
+  height: 30%;
+}
+
+#toastContainer::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .toast {
   position: relative;
   display: none;
   right: -100%;
-  width: 100%;
-  height: 5rem;
+  width: 96%;
+  height: 33%;
   margin: 5px;
   top: auto;
   border-bottom-left-radius: 0.5em;
@@ -44,8 +63,11 @@
 }
 
 .toast.option {
+  position: sticky;
+  top: 0;
   height: 30px;
   text-align: center;
+  z-index: 60;
 }
 
 .toast.option:active {

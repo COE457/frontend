@@ -10,7 +10,9 @@ const newToast = contents => {
     .click(e => {
       currentNotifications = Number($("#badge").html());
       $("#badge").html(currentNotifications - 1);
-      newToast.remove();
+      newToast.animate({ right: "+=100%" }, 350, "linear", () => {
+        newToast.remove();
+      });
     });
   timeOuts.push(
     setTimeout(() => {
@@ -26,7 +28,7 @@ $("#notification").click(e => {
   timeOuts.forEach(item => {
     clearTimeout(item);
   });
-  $(".toast").css({"right": "-100%"});
+  $(".toast").css({ right: "-100%" });
   setTimeout(() => {
     if (display == "block") {
       $(".toast").animate({ right: "-=100%" }, 350, "linear", () => {
@@ -41,9 +43,12 @@ $("#notification").click(e => {
 });
 
 $("#clearNot").click(e => {
-  $(".toast:not(.option)").remove();
-  $("#badge").html(0);
-  $(".toast").animate({ right: "-=100%" }, 350, "linear", () => {
+  $(".toast").animate({ right: "+=100%" }, 350, "linear", () => {
     $(".toast").hide();
+    $(".toast:not(.option)").remove();
+    $("#badge").html(0);
+    $(".toast").animate({ right: "-=100%" }, 350, "linear", () => {
+      $(".toast").hide();
+    });
   });
 });
