@@ -41,6 +41,7 @@
     <title>Child Monitoring System</title>
     <!-----------------linking stylesheets----------------->
     <link rel="stylesheet" href="../styles/modal.css" />
+    <link rel="stylesheet" href="../styles/toast.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/sideMenu.css" />
     <link rel="stylesheet" href="../styles/grid.css" />
@@ -48,7 +49,13 @@
     <link rel="stylesheet" href="../styles/loading.css" />
     <!----------------------------------------------------->
   </head>
+
+  <a href="#" id="notification">
+    <span>Notifications</span>
+    <span id="badge">0</span>
+  </a>
   <body>
+    <div id="toastContainer"></div>
     <!-- a modal that could be used for dialogs and forms -->
 
     <div id="modalContainer">
@@ -57,6 +64,7 @@
         <div id="modalBody"></div>
       </div>
     </div>
+
     <!-- A wrapper for everything in the page -->
     <div id="layout">
       <!-- Menu toggle -->
@@ -128,6 +136,7 @@
     <script src="../javascript/interface/menu.js"></script>
     <script src="../javascript/interface/navigation.js"></script>
     <script src="../javascript/interface/modal.js"></script>
+    <script src="../javascript/interface/toast.js"></script>
 
     <!-- loading db scripts -->
     <!-- database configuration -->
