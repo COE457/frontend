@@ -10,14 +10,14 @@
 }
 
 #notification #badge {
-    position: absolute;
-    bottom: -10px;
-    left: -10px;
-    padding: 5px 10px;
-    border-radius: 50%;
-    background: red;
-    color: white;
-  }
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
 
 #toastContainer {
   position: absolute;
@@ -29,7 +29,7 @@
 
 .toast {
   position: relative;
-  display: block;
+  display: none;
   right: -100%;
   width: 100%;
   height: 5rem;
@@ -43,7 +43,25 @@
   /* display: none; */
 }
 
+.toast.option {
+  height: 30px;
+  text-align: center;
+}
+
+.toast.option:active {
+  box-shadow: none;
+  transform: scale(0.99); /*shrink a little bit when pressed*/
+}
+
 .toast > p {
   padding: 10px;
   margin: 0;
+}
+
+.toast > h3 {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  line-height: 30px;
 }
