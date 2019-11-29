@@ -4,34 +4,17 @@
  * @description provides a service layer for communicating with the location route
  */
 
-const childURL = `${dbParams.url}/${dbParams.route}/locationHistory`;
+const locationHistURL = `${dbParams.url}/${dbParams.route}/locationHistory`;
 
 /**
- * @function createChildSvc
+ * @function readLocationHistSvc
  * @param {Object} data
- * @fires POST-location
- * @description sends a post request to the database to add a new location based on "data"
- */
-const createChildSvc = data => {
-  return $.ajax({
-    url: `${childURL}/create`,
-    dataType: "json",
-    type: "post",
-    contentType: "application/json",
-    data: data,
-    processData: false
-  });
-};
-
-/**
- * @function readChildSvc
- * @param {Object} data
- * @fires GET-location
+ * @fires GET-locationHistory
  * @description sends a get request to the database to list locations based on "data"
  */
-const readChildSvc = data => {
+const readLocationHistSvc = data => {
   return $.ajax({
-    url: `${childURL}/read`,
+    url: `${locationHistURL}/read`,
     dataType: "json",
     type: "get",
     contentType: "application/json",
@@ -41,14 +24,14 @@ const readChildSvc = data => {
 };
 
 /**
- * @function destroyChildSvc
+ * @function destroyLocationHistSvc
  * @param {Object} data
- * @fires DELETE-location
+ * @fires DELETE-locationHistory
  * @description sends a get request to the database to list locations based on "data"
  */
-const destroyChildSvc = data => {
+const destroyLocationHistSvc = data => {
   return $.ajax({
-    url: `${childURL}/destroy`,
+    url: `${locationHistURL}/destroy`,
     dataType: "json",
     type: "delete",
     contentType: "application/json",
