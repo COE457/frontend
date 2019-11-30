@@ -2,39 +2,61 @@
  * @file updates/updateLocation
  * 
  * @description updates "locationHist" in the dataStorage 
+ * 
+ * Assumptions: - db/actions/location.js have been loaded
+ *              - db/dataStorage.js have been loaded
  */
 
-
-/**
- * @function fetchLocations
- * @description fetches the locations using API calls
- * @fires readLocationHist()
- * @return {Array<Object>}
- */
-const fetchLocations = async () => {
-  var smartwatch = localStorage.getItem("currentSmartwatch");
-  if (smartwatch === null) {
-    console.log("cannot get locations without choosing a child first");
-    return Promise.reject("setAChild");
-  } else {
-    try {
-      const locations = await readLocationHist({ Smartwatch: smartwatch });
-      return locations;
-    } catch (err) {
-      console.log(err);
+((window, document) => {
+  /**
+   * @function fetchLocations
+   * @description fetches the locations using API calls
+   * @fires readLocationHist()
+   * @return {Array<Object>}
+   */
+  const fetchLocations = async () => {
+    var smartwatch = localStorage.getItem("currentSmartwatch"); //  getting the currently chosen smartwatch from localStorage
+    if (smartwatch === null) { //  don't do anything unless a smartwatch is chosen
+      console.log("cannot get locations without choosing a child first");
+      return Promise.reject("setAChild"); //  exit the function and reject promise
+    } else {
+      try {
+        const locations = await readLocationHist({ Smartwatch: smartwatch }); //  get locations associated with the current watch //  from db/actions/location.js
+        return Promise.resolve(locations);//  exit the function and resolve promise
+      } catch (err) { //  in case of db error
+        console.log(err);
+        return Promise.reject(err); //  reject promise and exit
+      }
     }
+  };
+
+  /**
+   * @function prepareData
+   * @description reformats db data and stores it in the temp storage object
+   * @fires fetchLocations()
+   * @fires "locationUpdated"
+   */
+  const prepareData = async () => {
+    try {
+      let locations = await fetchLocations(); //  getting locations 
+      var locationsObj = []; //  for formatting data
+      locations.rows.forEach(item => { //  formatting data to suite table 
+        locationsObj.push({
+          date: new Date(item.key),
+          location: item.value[2],
+          currentlyThere: item.value[0]
+        })
+      })
+      dataStorage.locationHist = locationsObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
+      $("#content").trigger(events.locationUpdated);
+    } catch (err) { console.log(err); }
   }
-};
 
-
-(async (window, document) => {
-  console.log("hi");
-  let locations = await fetchLocations();
-  dataStorage.locationHist = locations.docs;
-  
+  //  fetching data once 
+  prepareData();
+  //  fetching data again every 5 seconds
   setInterval(async () => {
-    locations = await fetchLocations();
-    dataStorage.locationHist = locations.docs;
+    prepareData();
   }, 5000);
 })(this, this.document);
 
