@@ -31,7 +31,7 @@ th {
 }
 .tableContainer td,
 .tableContainer th {
-  border-left: 1px solid #eeb501;
+  /* border-left: 1px solid #eeb501; */
   border-width: 0 0 0 1px;
   font-size: inherit;
   margin: 0;

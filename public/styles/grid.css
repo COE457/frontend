@@ -109,3 +109,11 @@ every card has:
   margin: 0;
   line-height: 30px;
 }
+
+.cardFooter > p {
+  margin: 0;
+  line-height: 30px;
+  text-align: right;
+  font-size: 75%;
+  padding-right: 1%;
+}

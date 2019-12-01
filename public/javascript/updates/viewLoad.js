@@ -15,9 +15,10 @@
     let page = localStorage.getItem("latestPage");
     switch (page) { //  call functions based on page
       case "location": //  check if data has been received from db then generate location table 
-        $("#content").on(events.locationUpdated, e => {
+        $("#content").runThenOn(`${events.locationUpdated}`, e => {
           let table = genTable(dataStorage.locationHist); //  from interface/table.js
           $("#locationTable").empty().append(table); //  clear table and append new data
+          $("#locationFooter").empty().append(`<p style:"margin:0">last check: ${new Date(Date.now())}</p>`)
         })
         break;
     }

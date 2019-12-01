@@ -10,10 +10,10 @@ const genTable = (contents) => {
 
   const genTableBody = (head, body) => {
     let tmp = "<tbody>";
-    body.forEach(element => {
+    body.forEach((element, index) => {
       //  iterating over the data array to generate a row for each item
       //sorting the data in html table tags
-      tmp += "<tr>";
+      tmp += `<tr ${(index % 2 == 0) ? '' : "style=background-color:#ebeef2"}>`;
       head.forEach(item => {
         tmp += `<td>${element[item]}</td>`
       });

@@ -34,6 +34,7 @@
    * @function prepareData
    * @description reformats db data and stores it in the temp storage object
    * @fires fetchLocations()
+   * @fires "newLocation"
    * @fires "locationUpdated"
    */
   const prepareData = async () => {
@@ -47,6 +48,12 @@
           currentlyThere: item.value[0]
         })
       })
+      if (dataStorage.locationHist) {
+        if (locationsObj[0].location[0] !== dataStorage.locationHist[0].location[0]
+          || locationsObj[1].location[1] !== dataStorage.locationHist[1].location[1]) {
+          $("body").trigger(events.newLocation);
+        }
+      }
       dataStorage.locationHist = locationsObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
       $("#content").trigger(events.locationUpdated);
     } catch (err) { console.log(err); }
@@ -57,7 +64,7 @@
   //  fetching data again every 5 seconds
   setInterval(async () => {
     prepareData();
-  }, 5000);
+  }, frequencies.locationUpdate);
 })(this, this.document);
 
 

@@ -46,6 +46,11 @@
   width: 0 !important;
 }
 
+#toastBody{
+  height: 100%;
+  width: 100%;
+}
+
 .toast {
   position: relative;
   display: none;
@@ -63,7 +68,6 @@
 }
 
 .toast.option {
-  position: sticky;
   top: 0;
   height: 30px;
   text-align: center;
