@@ -16,7 +16,7 @@
 
 ((window, document) => {
   //  wrapping the script in a function to avoid global variables
-  $(".menuLink").on(`click ${events.refreshed}`, e => {
+  $(".menuLink:not(#logout)").on(`click ${events.refreshed}`, e => {
     showLoading();
     $("#pageTitle")
       .hide()
@@ -32,5 +32,10 @@
       })
       .fadeIn("100");
   });
+
+  $("#logout").click(e => {
+    localStorage.clear();
+    window.location.href = "/login";
+  })
 
 })(this.window, this.document); //  calling the function

@@ -14,15 +14,8 @@
   <!-------------------------------------------------------------->
 
   <!-----------------------login check---------------------------->
-  //
   <script>
-    //DUMMY LOGIN CHECK
-    //To be replaced with authentication check when the API is ready
-    /**
-     * @todo replace with a valid condition
-     */
-    if (localStorage.length === 0) {
-      // if the user is NOT logged in
+    if (localStorage.getItem("userID") === null) {
       window.location.href = "/login"; // redirect to the login page
     }
   </script>
