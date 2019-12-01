@@ -1,170 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-----------------------loading jQuery------------------------->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
-    <!-------------------------------------------------------------->
 
-    <!-----------------------loading Snap--------------------------->
-    <script src="../javascript/snap.svg-min.js"></script>
-    <!-------------------------------------------------------------->
+<head>
+  <!-----------------------loading jQuery------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
-    <!-----------------------login check---------------------------->
-    //
-    <script>
-      //DUMMY LOGIN CHECK
-      //To be replaced with authentication check when the API is ready
-      /**
-       * @todo replace with a valid condition
-       */
-      if (localStorage.length === 0) {
-        // if the user is NOT logged in
-        window.location.href = "/login"; // redirect to the login page
-      }
-    </script>
-    <!-------------------------------------------------------------->
+  <script src="../javascript/util/JQueryExtend.js"></script>
+  <!-------------------------------------------------------------->
 
-    <meta charset="utf-8" />
-    <!-- setting the scales -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
-    <meta
-      name="Child Monitoring System"
-      content="The web interface for the child monitoring system"
-    />
-    <title>Child Monitoring System</title>
-    <!-----------------linking stylesheets----------------->
-    <link rel="stylesheet" href="../styles/modal.css" />
-    <link rel="stylesheet" href="../styles/toast.css" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/sideMenu.css" />
-    <link rel="stylesheet" href="../styles/grid.css" />
-    <link rel="stylesheet" href="../styles/table.css" />
-    <link rel="stylesheet" href="../styles/loading.css" />
-    <!----------------------------------------------------->
-  </head>
+  <!-----------------------loading Snap--------------------------->
+  <script src="../javascript/snap.svg-min.js"></script>
+  <!-------------------------------------------------------------->
 
-  <a href="#" id="notification">
-    <img src="../images/bell.svg" alt="">
-    <span id="badge">0</span>
-  </a>
-  <body>
+  <!-----------------------login check---------------------------->
+  //
+  <script>
+    //DUMMY LOGIN CHECK
+    //To be replaced with authentication check when the API is ready
+    /**
+     * @todo replace with a valid condition
+     */
+    if (localStorage.length === 0) {
+      // if the user is NOT logged in
+      window.location.href = "/login"; // redirect to the login page
+    }
+  </script>
+  <!-------------------------------------------------------------->
+
+  <meta charset="utf-8" />
+  <!-- setting the scales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="Child Monitoring System" content="The web interface for the child monitoring system" />
+  <title>Child Monitoring System</title>
+  <!-----------------linking stylesheets----------------->
+  <link rel="stylesheet" href="../styles/modal.css" />
+  <link rel="stylesheet" href="../styles/toast.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/sideMenu.css" />
+  <link rel="stylesheet" href="../styles/grid.css" />
+  <link rel="stylesheet" href="../styles/table.css" />
+  <link rel="stylesheet" href="../styles/loading.css" />
+  <!----------------------------------------------------->
+</head>
+
+<a href="#" id="notification">
+  <img src="../images/bell.svg" alt="">
+  <span id="badge">0</span>
+</a>
+
+<body>
+  <div id="toasts">
     <div id="toastContainer">
-      <div class="toast option" id="clearNot"><h3>CLEAR</h3></div>
+      <div class="toast option" id="clearNot">
+        <h3>CLEAR</h3>
+      </div>
+      <div id="toastBody"></div>
     </div>
-    <!-- a modal that could be used for dialogs and forms -->
+  </div>
+  <!-- a modal that could be used for dialogs and forms -->
 
-    <div id="modalContainer">
-      <div id="loading"><div class="loader"></div></div>
-      <div id="modal">
-        <div id="modalBody"></div>
+  <div id="modalContainer">
+    <div id="loading">
+      <div class="loader"></div>
+    </div>
+    <div id="modal">
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- A wrapper for everything in the page -->
+  <div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+      <span></span>
+    </a>
+
+    <!-- navigation menu starts here -->
+    <div id="menu">
+      <!-- @copyright https://purecss.io/layouts/side-menu/ -->
+      <div class="menuContainer">
+        <a class="menuHeading" href="#">
+          <img src="../images/ausLogo.png" alt="" />
+        </a>
+        <!-- menu items -->
+        <ul class="menuList">
+          <li class="menuItem">
+            <select name="watch" id="currentChild" style="width: 55%; padding: 0">
+              <option value="-">-</option>
+            </select>
+            <button id="addChild" style="width: 15%; padding: 0">
+              <b>+</b>
+            </button>
+            <button id="removeChild" style="width: 15%; padding: 0">
+              <b>-</b>
+            </button>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="home" href="#">Home</a>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="status" href="#">Status</a>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="location" href="#">Location</a>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="objects" href="#">Objects</a>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="communication" href="#">Communication</a>
+          </li>
+          <li class="menuItem">
+            <a class="menuLink" id="logout" href="#">Log Out</a>
+          </li>
+        </ul>
       </div>
     </div>
+    <!-- navigation menu ends here -->
 
-    <!-- A wrapper for everything in the page -->
-    <div id="layout">
-      <!-- Menu toggle -->
-      <a href="#menu" id="menuLink" class="menu-link">
-        <span></span>
-      </a>
-
-      <!-- navigation menu starts here -->
-      <div id="menu">
-        <!-- @copyright https://purecss.io/layouts/side-menu/ -->
-        <div class="menuContainer">
-          <a class="menuHeading" href="#">
-            <img src="../images/ausLogo.png" alt="" />
-          </a>
-          <!-- menu items -->
-          <ul class="menuList">
-            <li class="menuItem">
-              <select
-                name="watch"
-                id="currentChild"
-                style="width: 55%; padding: 0"
-              >
-                <option value="-">-</option>
-              </select>
-              <button id="addChild" style="width: 15%; padding: 0">
-                <b>+</b>
-              </button>
-              <button id="removeChild" style="width: 15%; padding: 0">
-                <b>-</b>
-              </button>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="home" href="#">Home</a>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="status" href="#">Status</a>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="location" href="#">Location</a>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="objects" href="#">Objects</a>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="communication" href="#">Communication</a>
-            </li>
-            <li class="menuItem">
-              <a class="menuLink" id="logout" href="#">Log Out</a>
-            </li>
-          </ul>
-        </div>
+    <div id="main">
+      <div class="header">
+        <!-- The title will be altered every time a page gets loaded -->
+        <h1 id="pageTitle"></h1>
       </div>
-      <!-- navigation menu ends here -->
-
-      <div id="main">
-        <div class="header">
-          <!-- The title will be altered every time a page gets loaded -->
-          <h1 id="pageTitle"></h1>
-        </div>
-        <div id="content">
-          <!-- Page contents will be loaded here -->
-          <!-- home.html gets loaded the first time this page is accessed -->
-        </div>
+      <div id="content">
+        <!-- Page contents will be loaded here -->
+        <!-- home.html gets loaded the first time this page is accessed -->
       </div>
     </div>
-    <!-- loading js files  -->
+  </div>
+  <!-- loading js files  -->
 
-    <!-- loading events -->
-    <script src="../javascript/util/events.js"></script>
+  <!-- loading constants -->
+  <script src="../javascript/util/frequencies.js"></script>
+  <!-- loading events -->
+  <script src="../javascript/util/events.js"></script>
 
-    <!-- loading interface scripts -->
-    <script src="../javascript/interface/menu.js"></script>
-    <script src="../javascript/interface/navigation.js"></script>
-    <script src="../javascript/interface/modal.js"></script>
-    <script src="../javascript/interface/toast.js"></script>
-    <script src="../javascript/interface/table.js"></script>
+  <!-- loading interface scripts -->
+  <script src="../javascript/interface/menu.js"></script>
+  <script src="../javascript/interface/navigation.js"></script>
+  <script src="../javascript/interface/modal.js"></script>
+  <script src="../javascript/interface/toast.js"></script>
+  <script src="../javascript/interface/table.js"></script>
 
-    <!-- loading db scripts -->
-    <!-- temporary data storage -->
-    <script src="../javascript/db/dataStorage.js"></script>
-    <!-- database configuration -->
-    <script src="../javascript/db/config/dbParams.js"></script>
+  <!-- loading db scripts -->
+  <!-- temporary data storage -->
+  <script src="../javascript/db/dataStorage.js"></script>
+  <!-- database configuration -->
+  <script src="../javascript/db/config/dbParams.js"></script>
 
-    <!-- database service layer -->
-    <script src="../javascript/db/services/child.js"></script>
-    <script src="../javascript/db/services/locationHistory.js"></script>
+  <!-- database service layer -->
+  <script src="../javascript/db/services/child.js"></script>
+  <script src="../javascript/db/services/locationHistory.js"></script>
 
-    <!-- database action layer -->
-    <script src="../javascript/db/actions/child.js"></script>
-    <script src="../javascript/db/actions/locationHistory.js"></script>
-    <!--------------------------->
-    <!-- loading view change detector -->
-    <script src="../javascript/updates/refresh.js"></script>
-    <script src="../javascript/updates/viewLoad.js"></script>
+  <!-- database action layer -->
+  <script src="../javascript/db/actions/child.js"></script>
+  <script src="../javascript/db/actions/locationHistory.js"></script>
+  <!--------------------------->
+  <!-- loading view change detector -->
+  <script src="../javascript/updates/refresh.js"></script>
+  <script src="../javascript/updates/viewLoad.js"></script>
 
-    <script src="../javascript/updates/updateChildList.js"></script>
+  <script src="../javascript/updates/updateChildList.js"></script>
 
-    <!-- value setting scripts -->
-    <script src="../javascript/updates/updateLocation.js"></script>
-  </body>
+  <!-- value setting scripts -->
+  <script src="../javascript/updates/updateLocation.js"></script>
+
+  <!-- notification scripts -->
+  <script src="../javascript/updates/notifications.js"></script>
+</body>
+
 </html>
