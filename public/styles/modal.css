@@ -107,9 +107,11 @@
   left: 0;
 }
 
-#formBody > #formItem > input {
+#formBody > #formItem > input,  
+#formBody > #formItem > select{
   position: absolute;
   right: 10%;
+  width: 50%;
 }
 #formFooter {
   position: absolute;

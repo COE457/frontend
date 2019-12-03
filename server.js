@@ -56,7 +56,7 @@ app.get("/addChild.html", (req, res) => {
 });
 
 app.get("/removeChild.html", (req, res) => {
-    res.sendFile(path.resolve('./public/html/components/views/removeChild.html'));
+    res.sendFile(path.resolve('./public/html/components/modals/removeChild.html'));
 });
 
 /*******************************************************************/

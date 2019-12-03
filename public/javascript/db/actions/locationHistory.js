@@ -15,7 +15,8 @@
       const location = await destroyLocationHistSvc(data);
       return location;
     } catch (err) {
-      console.log(err);
+      console.error(err.responseText);
+throw(err.responseJSON)
     }
   };
   
@@ -30,6 +31,7 @@
         const location = await readLocationHistSvc(data);
         return location;
       } catch (err) {
-        console.log(err);
+        console.error(err.responseText);
+throw(err.responseJSON)
       }
     };

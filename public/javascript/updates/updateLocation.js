@@ -24,7 +24,7 @@
         const locations = await readLocationHist({ Smartwatch: smartwatch }); //  get locations associated with the current watch //  from db/actions/location.js
         return Promise.resolve(locations);//  exit the function and resolve promise
       } catch (err) { //  in case of db error
-        console.log(err);
+        console.error(err.responseText);
         return Promise.reject(err); //  reject promise and exit
       }
     }
@@ -56,7 +56,7 @@
       }
       dataStorage.locationHist = locationsObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
       $("#content").trigger(events.locationUpdated);
-    } catch (err) { console.log(err); }
+    } catch (err) { console.error(err.responseText); }
   }
 
   //  fetching data once 

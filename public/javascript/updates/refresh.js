@@ -5,6 +5,6 @@
     let load = page === null ? ".menuLink#home" : `.menuLink#${page}`;
     $(load).trigger(events.refreshed); //  triggers an event that loads either home or latestPage
   } catch (err) {
-    console.log(err);
+    console.error(err.responseText);
   }
 })(this, this.document);

@@ -15,7 +15,8 @@ const createChild = async (data) => {
     const child = await createChildSvc(data);
     return child;
   } catch (err) {
-    console.log(err);
+    console.error(err.responseText);
+    throw (err.responseJSON)
   }
 };
 
@@ -30,7 +31,8 @@ const destroyChild = async (data) => {
     const child = await destroyChildSvc(data);
     return child;
   } catch (err) {
-    console.log(err);
+    console.error(err.responseText);
+    throw (err.responseJSON)
   }
 };
 
@@ -41,10 +43,11 @@ const destroyChild = async (data) => {
  * @description uses readChildSvc() to send new child data to the database
  */
 const readChild = async (data) => {
-    try {
-      const child = await readChildSvc(data);
-      return child;
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  try {
+    const child = await readChildSvc(data);
+    return child;
+  } catch (err) {
+    console.error(err.responseText);
+    throw (err.responseJSON)
+  }
+};

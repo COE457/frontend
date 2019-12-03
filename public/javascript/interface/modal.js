@@ -1,8 +1,10 @@
-const showModal = (contents, height) => {
+const showModal = (contents, height, callback) => {
   $("#modal")
     .load(contents)
     .height(height);
-  $("#modalContainer").fadeIn("slow");
+  $("#modalContainer").fadeIn("slow", () => {
+    if (callback) callback();
+  });
 };
 
 const hideModal = () => {

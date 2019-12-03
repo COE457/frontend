@@ -18,7 +18,7 @@ const createChildSvc = data => {
     dataType: "json",
     type: "post",
     contentType: "application/json",
-    data: data,
+    data: JSON.stringify(data),
     processData: false
   });
 };
@@ -52,7 +52,7 @@ const destroyChildSvc = data => {
     dataType: "json",
     type: "delete",
     contentType: "application/json",
-    data: data,
+    data: JSON.stringify(data),
     processData: false
   });
 };

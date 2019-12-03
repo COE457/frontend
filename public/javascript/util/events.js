@@ -12,5 +12,6 @@
      refreshed: "refreshed", //  when the page is refreshed and done loading
      locationUpdated: "locationUpdated", //  when location data gets updated 
      newLocation: "newLocation", //  when a new location is detected
-     clearNotifications: "clearNotifications" //  when notifications should be cleared
+     clearNotifications: "clearNotifications", //  when notifications should be cleared
+     childListUpdated: "childListUpdated" //  when the user's list of children is updated
  }
