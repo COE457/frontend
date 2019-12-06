@@ -59,6 +59,10 @@ app.get("/removeChild.html", (req, res) => {
     res.sendFile(path.resolve('./public/html/components/modals/removeChild.html'));
 });
 
+app.get("/viewImage.html", (req, res) => {
+    res.sendFile(path.resolve('./public/html/components/modals/viewImage.html'));
+});
+
 /*******************************************************************/
 
 //Starting the server
