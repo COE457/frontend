@@ -5,5 +5,7 @@
  */
 var dataStorage = {
     locationHist: null, //  to store locations
-    childList: null //  to store child names 
+    childList: null, //  to store child names 
+    equipmentHist: null,
+    
 };

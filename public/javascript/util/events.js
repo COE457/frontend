@@ -13,5 +13,8 @@
      locationUpdated: "locationUpdated", //  when location data gets updated 
      newLocation: "newLocation", //  when a new location is detected
      clearNotifications: "clearNotifications", //  when notifications should be cleared
-     childListUpdated: "childListUpdated" //  when the user's list of children is updated
+     childListUpdated: "childListUpdated", //  when the user's list of children is updated
+     temperatureUpdated: "temperatureUpdated", //  when temperature data gets updated 
+     equipmentUpdated: "equipmentUpdated", //  when equipment data gets updated
+     heartRateUpdated: "heartRateUpdated" //  when heartRate readings gets updated
  }

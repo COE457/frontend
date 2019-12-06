@@ -7,6 +7,8 @@
  *              - util/events.js has been loaded
  *              - interface/table.js has been loaded
  *              - interface/modal.js has been loaded
+ *              - db/dataStorage.js had been loaded
+ *              - interface/heartRate.js has been loaded
  *
  */
 ((window, document) => {
@@ -23,6 +25,19 @@
               dataStorage.locationHist[0].location[1]
           );
         });
+        $("#content").runThenOn(events.equipmentUpdated, e => { //  when location is updated
+          $("#equiptt").html( //  set the latest location under the location icon
+            dataStorage.equipmentHist
+          );
+        });
+        break;
+
+
+      case "status": 
+        genHeartRate('#heartRate', 50);
+        genTemperature('#thermometerRoom', 40)
+        break;
+
       case "location": //  check if data has been received from db then generate location table
         $("#content").runThenOn(`${events.locationUpdated}`, e => {
           let table = genTable(dataStorage.locationHist); //  from interface/table.js

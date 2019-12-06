@@ -133,6 +133,6 @@ class Thermometer {
    * @param {string} thermo the id of the svg element the thermometer should be loaded in
    * @fires Thermometer constructor
    */
-  const t = thermo => {
-    new Thermometer(thermo, 36.9, 30, 43, 200, 50, false);
+  const genTemperature = (thermo, temperature) => {
+    new Thermometer(thermo, temperature, 18, 40, 200, 50, false);
   };
