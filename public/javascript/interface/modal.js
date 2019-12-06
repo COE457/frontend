@@ -1,7 +1,11 @@
-const showModal = (contents, height, callback) => {
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+const showModal = (contents, height, callback, callBefore) => {
   $("#modal")
-    .load(contents)
-    .height(height);
+    .height(height)
+    .load(contents, () => {
+      if(callBefore) callBefore(); //  to be called before the modal is shown
+    })
   $("#modalContainer").fadeIn("slow", () => {
     if (callback) callback();
   });

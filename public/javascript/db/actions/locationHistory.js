@@ -16,7 +16,7 @@
       return location;
     } catch (err) {
       console.error(err.responseText);
-throw(err.responseJSON)
+      throw(err.responseJSON)
     }
   };
   
@@ -32,6 +32,6 @@ throw(err.responseJSON)
         return location;
       } catch (err) {
         console.error(err.responseText);
-throw(err.responseJSON)
+        throw(err.responseJSON)
       }
     };

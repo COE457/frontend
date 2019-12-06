@@ -43,8 +43,8 @@
       var locationsObj = []; //  for formatting data
       locations.rows.forEach(item => { //  formatting data to suite table 
         locationsObj.push({
-          date: new Date(item.key),
-          location: item.value[2],
+          date: new Date(item.key[1]),
+          location: item.value[1],
           currentlyThere: item.value[0]
         })
       })
@@ -56,7 +56,7 @@
       }
       dataStorage.locationHist = locationsObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
       $("#content").trigger(events.locationUpdated);
-    } catch (err) { console.error(err.responseText); }
+    } catch (err) { console.error(err); }
   }
 
   //  fetching data once 

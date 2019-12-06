@@ -16,14 +16,16 @@
   $("#currentChild").runThenOn(events.childListUpdated, async (e) => { //  run callback then set as event listener callback. //  from util/JQueryExtend.js
     try {
       const childList = await readChild({ Parent: parent }); //  getting the list from db. //  from db/actions/child.js
-      let list = childList.docs;
-      $("#currentChild").empty().append(`<option value="null"> - </option>`);
+      let list = childList.docs; //  place the list in a variable 
+      $("#currentChild").empty().append(`<option value="null"> - </option>`); //  null default
       list.forEach(element => { //  placing children in a droplist
         $("#currentChild").append( //  change the droplist
           `<option value=${element.name}> ${element.name} </option>`
         );
       });
       dataStorage.childList = list; //  saving list in a local object to avoid extra API calls 
+      if(localStorage.getItem("currentChild") !== null)
+        $("#currentChild").val(localStorage.getItem("currentChild")); //  latest choice if exists
     } catch (err) {
       console.error(err.responseText);
       alert("Failed to get child list. Interface might not function correctly");

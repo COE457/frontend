@@ -18,7 +18,7 @@ const readLocationHistSvc = data => {
     dataType: "json",
     type: "get",
     contentType: "application/json",
-    data: data,
+    data: $.param(data),
     processData: false
   });
 };
