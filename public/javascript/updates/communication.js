@@ -13,7 +13,7 @@ const attachCommunicationMessages = () => { //  called when the user navigates t
       JSON.stringify({ //  stringify the object 
         from: $("#messageSender").val(), //  get the sender name from the designated field 
         msg: "Food is ready!", //  message body 
-        id: new Date(Date.now()) //  time stamp
+        id: Date.now() //  time stamp
       })
     );
   });
@@ -23,7 +23,7 @@ const attachCommunicationMessages = () => { //  called when the user navigates t
         JSON.stringify({
           from: $("#messageSender").val(),
           msg: "Bed time!",
-          id: new Date(Date.now())
+          id: Date.now()
         })
       );
   });
@@ -33,7 +33,7 @@ const attachCommunicationMessages = () => { //  called when the user navigates t
         JSON.stringify({
           from: $("#messageSender").val(),
           msg: $("#customMessageBody").val(), //  custom message body 
-          id: new Date(Date.now())
+          id: Date.now()
         })
       );
   });

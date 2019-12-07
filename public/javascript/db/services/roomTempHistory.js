@@ -4,7 +4,7 @@
  * @description provides a service layer for communicating with the temperature route
  */
 
-const temperatureHistURL = `${dbParams.url}/${dbParams.route}/temperatureHistory`;
+const temperatureHistURL = `${dbParams.url}/${dbParams.route}/roomTempHistory`;
 
 /**
  * @function readTemperatureHistSvc

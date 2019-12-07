@@ -24,10 +24,10 @@
         return Promise.reject("setAChild"); //  exit the function and reject promise
       } else {
         try {
-          const temperatures = await readTemperatureHist({ Smartwatch: smartwatch }); //  get temperatures associated with the current watch //  from db/actions/temperature.js
+          const temperatures = await readTemperatureHist(); //  get temperatures associated with the current watch //  from db/actions/temperature.js
           return Promise.resolve(temperatures);//  exit the function and resolve promise
         } catch (err) { //  in case of db error
-          console.error(err.responseText);
+          console.error(err);
           return Promise.reject(err); //  reject promise and exit
         }
       }
@@ -47,21 +47,20 @@
         temperatures.rows.forEach(item => { //  formatting data to suite table 
           temperaturesObj.push({
             date: new Date(item.key),
-            temperature: item.value[2],
-            currentlyThere: item.value[0]
+            temperature: item.value,
           })
         })
-        if (dataStorage.temperatureHist) {
-          if (temperaturesObj[0].temperature[0] !== dataStorage.temperatureHist[0].temperature[0]
-            || temperaturesObj[1].temperature[1] !== dataStorage.temperatureHist[1].temperature[1]) {
-            $("body").trigger(events.newTemperature);
-          }
-        }
+        // if (dataStorage.temperatureHist) {
+        //   if (temperaturesObj[0].temperature[0] !== dataStorage.temperatureHist[0].temperature[0]
+        //     || temperaturesObj[1].temperature[1] !== dataStorage.temperatureHist[1].temperature[1]) {
+        //     $("body").trigger(events.newTemperature);
+        //   }
+        // }
         dataStorage.temperatureHist = temperaturesObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
         $("#content").trigger(events.temperatureUpdated);
       } catch (err) { console.error(err.responseText); }
     }
-  
+
     //  fetching data once 
     prepareData();
     //  fetching data again every 5 seconds

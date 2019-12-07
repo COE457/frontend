@@ -46,17 +46,17 @@
         var heartRatesObj = []; //  for formatting data
         heartRates.rows.forEach(item => { //  formatting data to suite table 
           heartRatesObj.push({
-            date: new Date(item.key),
-            heartRate: item.value[2],
-            currentlyThere: item.value[0]
+            date: new Date(item.key[1]),
+            heartRate: item.value[1],
+            awake: item.value[0]
           })
         })
-        if (dataStorage.heartRateHist) {
-          if (heartRatesObj[0].heartRate[0] !== dataStorage.heartRateHist[0].heartRate[0]
-            || heartRatesObj[1].heartRate[1] !== dataStorage.heartRateHist[1].heartRate[1]) {
-            $("body").trigger(events.newHeartRate);
-          }
-        }
+        // if (dataStorage.heartRateHist) {
+        //   if (heartRatesObj[0].heartRate[0] !== dataStorage.heartRateHist[0].heartRate[0]
+        //     || heartRatesObj[1].heartRate[1] !== dataStorage.heartRateHist[1].heartRate[1]) {
+        //     $("body").trigger(events.newHeartRate);
+        //   }
+        // }
         dataStorage.heartRateHist = heartRatesObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
         $("#content").trigger(events.heartRateUpdated);
       } catch (err) { console.error(err.responseText); }

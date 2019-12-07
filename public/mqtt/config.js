@@ -1,5 +1,5 @@
 mqttParams = {
     HOST: "broker.mqttdashboard.com",
-    TOPIC: "/childMonitor/messaging",
+    TOPIC: "childMonitor/message/",
     PORT: 8000
 }

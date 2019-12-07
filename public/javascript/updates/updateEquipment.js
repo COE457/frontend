@@ -25,6 +25,7 @@
       } else {
         try {
           const equipments = await readEquipmentHist({ Smartwatch: smartwatch }); //  get equipments associated with the current watch //  from db/actions/equipment.js
+          console.log('equipments: ', equipments);
           return Promise.resolve(equipments);//  exit the function and resolve promise
         } catch (err) { //  in case of db error
           console.error(err.responseText);
@@ -41,22 +42,17 @@
      * @fires "equipmentUpdated"
      */
     const prepareData = async () => {
+      console.log("here");
       try {
         let equipments = await fetchEquipments(); //  getting equipments 
         var equipmentsObj = []; //  for formatting data
         equipments.rows.forEach(item => { //  formatting data to suite table 
           equipmentsObj.push({
-            date: new Date(item.key),
-            equipment: item.value[2],
-            currentlyThere: item.value[0]
+            date: new Date(item.key[1]),
+            equipment: item.value
           })
         })
-        if (dataStorage.equipmentHist) {
-          if (equipmentsObj[0].equipment[0] !== dataStorage.equipmentHist[0].equipment[0]
-            || equipmentsObj[1].equipment[1] !== dataStorage.equipmentHist[1].equipment[1]) {
-            $("body").trigger(events.newEquipment);
-          }
-        }
+
         dataStorage.equipmentHist = equipmentsObj; //  storing formatted data in a dataStorage //  from db/dataStorage.js
         $("#content").trigger(events.equipmentUpdated);
       } catch (err) { console.error(err.responseText); }

@@ -44,8 +44,7 @@
       locations.rows.forEach(item => { //  formatting data to suite table 
         locationsObj.push({
           date: new Date(item.key[1]),
-          location: item.value[1],
-          currentlyThere: item.value[0]
+          location: item.value
         })
       })
       if (dataStorage.locationHist) {

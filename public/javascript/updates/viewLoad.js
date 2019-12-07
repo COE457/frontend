@@ -19,24 +19,36 @@
       page //  call functions based on page
     ) {
       case "home":
-        $("#content").runThenOn(events.locationUpdated, e => { //  when location is updated
-          $("#latestLocation").html( //  set the latest location under the location icon
+        $("#content").runThenOn(events.locationUpdated, e => {
+          //  when location is updated
+          $("#latestLocation").html(
+            //  set the latest location under the location icon
             dataStorage.locationHist[0].location[0] +
               ", " +
               dataStorage.locationHist[0].location[1]
           );
         });
-        $("#content").runThenOn(events.equipmentUpdated, e => { //  when location is updated
-          $("#equiptt").html( //  set the latest location under the location icon
-            dataStorage.equipmentHist
+        $("#content").runThenOn(events.equipmentUpdated, e => {
+          //  when location is updated
+          $("#equiptt").html(
+            //  set the latest location under the location icon
+            dataStorage.equipmentHist[0].equipment? "equipped":"not equipped"
           );
         });
         break;
 
+      case "status":
+        $("#content").runThenOn(events.temperatureUpdated, e => {
+          let reading = dataStorage.temperatureHist[0].temperature;
+          genTemperature("#thermometerRoom", reading.toPrecision(3));
+        });
+        $("#content").runThenOn(events.heartRateUpdated, e => {
+          let reading = dataStorage.heartRateHist[0];
+          genHeartRate("#heartRate", reading.heartRate);
+          $("#awake").html(reading.awake);
+        });
+        
 
-      case "status": 
-        genHeartRate('#heartRate', 50);
-        genTemperature('#thermometerRoom', 40)
         break;
 
       case "location": //  check if data has been received from db then generate location table
@@ -53,9 +65,13 @@
         });
         break;
 
-        case "communication":
-          attachCommunicationMessages() //  attach messages to cards. //  from updates/communication.js
+        case "objects":
+          
           break;
+
+      case "communication":
+        attachCommunicationMessages(); //  attach messages to cards. //  from updates/communication.js
+        break;
     }
     hideLoading(); //  hide loading icon //  from interface/modal.js
   });
