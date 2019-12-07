@@ -2,6 +2,9 @@
  * @file interface/toast.js
  * 
  * @overview includes functions for controlling toasts
+ * 
+ * Assumptions: - JQuery have loaded
+ *              - util/events.js have loaded
  */
 
 let timeOuts = []; //  for storing timers

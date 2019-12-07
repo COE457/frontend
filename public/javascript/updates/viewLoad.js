@@ -9,6 +9,7 @@
  *              - interface/modal.js has been loaded
  *              - db/dataStorage.js had been loaded
  *              - interface/heartRate.js has been loaded
+ *              - updates/communication.js loaded
  *
  */
 ((window, document) => {
@@ -51,6 +52,10 @@
             );
         });
         break;
+
+        case "communication":
+          attachCommunicationMessages() //  attach messages to cards. //  from updates/communication.js
+          break;
     }
     hideLoading(); //  hide loading icon //  from interface/modal.js
   });

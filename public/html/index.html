@@ -16,11 +16,11 @@
   <!-------------------------------------------------------------->
 
   <!-----------------------login check---------------------------->
-  <!-- <script>
+  <script>
     if (localStorage.getItem("userID") === null) {
       window.location.href = "/login"; // redirect to the login page
     }
-  </script> -->
+  </script>
   <!-------------------------------------------------------------->
 
   <meta charset="utf-8" />
@@ -168,12 +168,19 @@
   <script src="../javascript/db/actions/roomTempHistory.js"></script>
 
   <!--------------------------->
+
+  <!-- loading MQTT handler -->
+  <script src="../mqtt/config.js"></script>
+  <script src="../mqtt/mqtt.js"></script>
+  <!-------------------------->
+
   <!-- loading view change detector -->
+  <script src="../javascript/updates/communication.js"></script>
   <script src="../javascript/updates/refresh.js"></script>
   <script src="../javascript/updates/viewLoad.js"></script>
 
   <script src="../javascript/updates/updateChildList.js"></script>
-
+  
   <!-- value setting scripts -->
   <script src="../javascript/updates/updateLocation.js"></script>
 

@@ -1,7 +1,7 @@
 //sample HTML/JS script that will publish/subscribe to topics in the Google Chrome Console
 //by Matthew Bordignon @bordignon on twitter.
 var wsbroker = mqttParams.HOST; //mqtt websocket enabled broker
-var wsport = 3000 // port for above
+var wsport = mqttParams.PORT // port for above
 var client = new Paho.MQTT.Client(wsbroker, wsport,
     "myclientid_" + parseInt(Math.random() * 100, 10));
 client.onConnectionLost = function (responseObject) {

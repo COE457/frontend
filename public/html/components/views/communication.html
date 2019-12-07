@@ -2,59 +2,71 @@
 <!-- no style links since "#contents" will be loaded into index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Communication</title>
-  </head>
-  <body>
-    <div id="contents">
-      <main class="wrapper">
-        <section class="gridContainer">
-          <!-- First Row -->
-          <ul>
-            <!-- CARD -->
-            <li id="foodIsReady">
-              <div class="cardHeader">
-                <h3>Food is Ready!</h3>
-              </div>
-              <div class="cardBody">
-                <img src="../images/communication/food.svg" alt="Excited" />
-              </div>
-            </li>
-            <!-- CARD END -->
-            <!-- CARD -->
-            <li id="goToSleep">
-              <div class="cardHeader">
-                <h3>Go to Sleep!</h3>
-              </div>
-              <div class="cardBody">
-                <img src="../images/communication/sleep.png" alt="Excited" />
-              </div>
-            </li>
-            <!-- CARD END -->
-          </ul>
-          <!-- First Row  End-->
-          <!-- Second Row -->
-          <ul>
-            <!-- CARD -->
-            <li id="customMessage">
-              <div class="cardHeader">
-                <h3>Custom Message</h3>
-              </div>
-              <div class="cardBody">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-              </div>
-              <div class="cardFooter">
-                <button>SEND</button>
-              </div>
-            </li>
-            <!-- CARD END -->
-          </ul>
-          <!-- Second Row End -->
-        </section>
-      </main>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Communication</title>
+</head>
+
+<body>
+  <div id="contents">
+    <main class="wrapper">
+      <section class="gridContainer">
+        <ul>
+          <!-- CARD -->
+          <li class="unClickable">
+            <div class="cardBody">
+              <input type="text" id="messageSender" placeholder="FROM">
+            </div>
+          </li>
+          <!-- CARD END -->
+        </ul>
+        <!-- First Row -->
+        <ul>
+          <!-- CARD -->
+          <li id="foodIsReady">
+            <div class="cardHeader">
+              <h3>Food is Ready!</h3>
+            </div>
+            <div class="cardBody">
+              <img src="../images/communication/food.svg" alt="Excited" />
+            </div>
+          </li>
+          <!-- CARD END -->
+          <!-- CARD -->
+          <li id="goToSleep">
+            <div class="cardHeader">
+              <h3>Go to Sleep!</h3>
+            </div>
+            <div class="cardBody">
+              <img src="../images/communication/sleep.png" alt="Excited" />
+            </div>
+          </li>
+          <!-- CARD END -->
+        </ul>
+        <!-- First Row  End-->
+        <!-- Second Row -->
+        <ul>
+          <!-- CARD -->
+          <li id="customMessage" class="unClickable">
+            <div class="cardHeader">
+              <h3>Custom Message</h3>
+            </div>
+            <div class="cardBody">
+              <textarea name="" id="customMessageBody" cols="30" rows="10"></textarea>
+            </div>
+            <div class="cardFooter">
+              <button>SEND</button>
+            </div>
+          </li>
+          <!-- CARD END -->
+        </ul>
+        <!-- Second Row End -->
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>
