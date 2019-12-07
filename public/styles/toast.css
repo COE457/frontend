@@ -40,6 +40,7 @@
   overflow-x: visible;
   overflow-y: scroll;
   height: 30%;
+  pointer-events: none;
 }
 
 #toastContainer::-webkit-scrollbar {
@@ -64,7 +65,7 @@
   border-right: 5px solid #e9be38;
   background-color: #e2e2e2;
   box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
-  /* display: none; */
+  pointer-events: all;
 }
 
 .toast.option {
