@@ -16,5 +16,7 @@
      childListUpdated: "childListUpdated", //  when the user's list of children is updated
      temperatureUpdated: "temperatureUpdated", //  when temperature data gets updated 
      equipmentUpdated: "equipmentUpdated", //  when equipment data gets updated
-     heartRateUpdated: "heartRateUpdated" //  when heartRate readings gets updated
+     heartRateUpdated: "heartRateUpdated", //  when heartRate readings gets updated
+     objectsUpdated: "objectsUpdated", //  when a new object interaction image is available 
+     panicUpdated: "panicUpdated" //  when a new panic info is available
  }

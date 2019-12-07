@@ -25,7 +25,6 @@
       } else {
         try {
           const equipments = await readEquipmentHist({ Smartwatch: smartwatch }); //  get equipments associated with the current watch //  from db/actions/equipment.js
-          console.log('equipments: ', equipments);
           return Promise.resolve(equipments);//  exit the function and resolve promise
         } catch (err) { //  in case of db error
           console.error(err.responseText);
@@ -42,7 +41,6 @@
      * @fires "equipmentUpdated"
      */
     const prepareData = async () => {
-      console.log("here");
       try {
         let equipments = await fetchEquipments(); //  getting equipments 
         var equipmentsObj = []; //  for formatting data
