@@ -1,11 +1,14 @@
+/*contains the loader*/
 #loading {
   position: fixed;
-  display: none;
+  display: none; /*normally hidden*/
   width: 100%;
   height: 100%;
-  padding-top: 20%;
-  z-index: 5000;
+  padding-top: 20%; /*to adjust placement*/
+  z-index: 5000; /*on top of everything*/
 }
+
+/*copyright https://www.w3schools.com/howto/howto_css_loader.asp*/
 .loader {
   position: relative;
   margin: auto;

@@ -2,19 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo&display=swap");
 /* accounting for borders and margins */
 
-
+/*fixing the modal container in place and giving it black see-through color*/
 #modalContainer {
   position: fixed;
   display: none;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.85);
-  z-index: 6;
+  z-index: 6;/*on top of everything except the modal and loading*/
   padding: 0;
   top:0;
   overflow: hidden;
 }
 
+/*modal in the middle of the container*/
 #modal {
   margin: auto;
   margin-top: 10%;
@@ -25,16 +26,19 @@
   box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
 }
 
+/*form contained in the modal and used as a position reference*/
 #form {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+/*all direct children of #form have the same width as it*/
 #form > * {
   width: 100%;
 }
 
+/*place the header on top and give it round top edges*/
 #formHeader {
   position: absolute;
   top: 0;
@@ -48,7 +52,9 @@
   margin: 0;
 }
 
-#formHeader > h3 {  height: 100%;
+/*rules for direct h3 children*/
+#formHeader > h3 {  
+  height: 100%;
   font-size: 200%; /*scalable text size 4 times larger than the base*/
   font-family: "Archivo", sans-serif; /*using the imported font or sans-serif if not found*/
   color: #ffffff;
@@ -56,6 +62,7 @@
   line-height: 40px; /*to center it vertically*/
 }
 
+/*footer in the bottom*/
 #formFooter {
   position: absolute;
   height: 30px; /*static height*/
@@ -66,6 +73,7 @@
   border-bottom-left-radius: 0.5rem;
 }
 
+/*button half as wide as the footer*/
 #formFooter > button {
   padding: 0;
   margin: 0;
@@ -75,22 +83,26 @@
   width: 49.39%;
 }
 
+/*rounding the correct corner and coloring red*/
 #formFooter > #rightButton {
   border-bottom-right-radius: 0.5rem;
   background-color: tomato;
 }
 
+/*rounding the correct corner and coloring green*/
 #formFooter > #leftButton {
   border-bottom-left-radius: 0.5rem;
   background-color: springgreen;
 }
 
+/*in case of a form with a single button*/
 #formFooter > #singleButton {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   width: 100%;
 }
 
+/*the form body is close to the middle*/
 #formBody {
   position: absolute;
   top: 35%;
@@ -98,26 +110,32 @@
   height: auto;
 }
 
+/*formItems are as wide as the form*/
 #formBody > #formItem {
   width: 100%;
   padding-bottom: 2%;
 }
 
+/*labels on the left*/
 #formBody > #formItem > label {
   left: 0;
 }
 
+/* inputs and selects on the left */
 #formBody > #formItem > input,  
 #formBody > #formItem > select{
   position: absolute;
   right: 10%;
   width: 50%;
 }
+
+/*footer in the bottom*/
 #formFooter {
   position: absolute;
   bottom: 0;
 }
 
+/*relatively wider modals for small screens*/
 @media (max-width: 58em) {
   #modal {
     width: 80%;

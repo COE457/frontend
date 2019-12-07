@@ -1,3 +1,4 @@
+/* notification button */
 #notification {
   position: fixed;
   right: 0;
@@ -12,6 +13,7 @@
   box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
 }
 
+/*circular notification icon*/
 #notification > img {
   border-radius: 50%;
   width: 15px;
@@ -19,6 +21,7 @@
   margin: auto;
 }
 
+/*red circular badge*/
 #notification #badge {
   position: absolute;
   bottom: -5px;
@@ -31,20 +34,21 @@
   text-align: center;
 }
 
+/*container that contains all toasts and determines their size and quantities per view*/
 #toastContainer {
   position: absolute;
-  top: 75px;
+  top: 75px; /*right under the notifications icon*/
   right: 15px;
   width: 30%;
-  z-index: 6;
-  overflow-x: visible;
-  overflow-y: scroll;
+  z-index: 6;/*on top of cards and titles */
+  overflow-x: visible;/*allow overflow in the x-direction*/
+  overflow-y: scroll;/*any overflow in the y-direction is hidden and accessible through scrolling*/
   height: 30%;
-  pointer-events: none;
+  pointer-events: none;/*doesn't prevent clicking underlying elements*/
 }
 
 #toastContainer::-webkit-scrollbar {
-  width: 0 !important;
+  width: 0 !important;/*scrollbar not visible*/
 }
 
 #toastBody{
@@ -52,6 +56,7 @@
   width: 100%;
 }
 
+/*initially hidden and out of the view to the right*/
 .toast {
   position: relative;
   display: none;
@@ -65,14 +70,15 @@
   border-right: 5px solid #e9be38;
   background-color: #e2e2e2;
   box-shadow: 2.5px 5px 9px #8888; /* shadow settings */
-  pointer-events: all;
+  pointer-events: all;/*prevents clicking underlying elements*/
 }
 
+/*smaller toasts. could be used as buttons*/
 .toast.option {
   top: 0;
   height: 30px;
   text-align: center;
-  z-index: 60;
+  z-index: 60;/*over other toasts*/
 }
 
 .toast.option:active {
