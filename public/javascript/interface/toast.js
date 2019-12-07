@@ -85,3 +85,12 @@ $("#clearNot").click(e => { //  when the option toast "CLEAR" is clicked, delete
   $(".toast").trigger(events.clearNotifications); //  this gives the flexibility to add notification clearing to places that don't include opening the notification menu
   hideToast($(".toast")); //  toasts that don't have an event listener for deletion will be hidden here
 });
+
+$("body").keydown(e => {
+  if (e.keyCode === 27) { //  if esc is pressed menu is open, close it 
+    let display = $(".toast").css("display");
+    if (display == "block") { //  if the notification list (toasts) was already open, hide all toasts
+      hideToast($(".toast"));
+    }
+  }
+});
