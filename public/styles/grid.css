@@ -76,16 +76,19 @@ every card has:
   text-align: center; /*center text if any*/
 }
 
-.cardBody > textarea {
+.cardBody > input, .cardBody > textarea {
   width: 95%;
   border: 2px solid grey;
   margin: 5px;
+  font-size: 150%;
+  padding: 5px;
 }
 
 
-
-
-
+.cardBody > input {
+  text-align: center;
+  width: 40%;
+}
 /* setting the size and centering svg's and img's in the body */
 .cardBody > img, .cardBody > svg {
   width: 220px;
@@ -95,7 +98,6 @@ every card has:
   margin: auto;
   display: block;
 }
-
 
 /* the footer at the bottom */
 .cardFooter {
@@ -128,6 +130,13 @@ every card has:
 }
 
 .cardFooter > button {
+  padding: 0;
   margin: 0;
+  height: 100%;
+  bottom: 0;
+  border: 0;
   width: 100%;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background-color: #e9be38;
 }
