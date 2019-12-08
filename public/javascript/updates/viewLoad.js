@@ -16,7 +16,7 @@
   $("#content").on(events.viewReady, () => {
     let page = localStorage.getItem("latestPage");
     switch (
-      page //  call functions based on page
+    page //  call functions based on page
     ) {
       case "home":
         $("#content").runThenOn(events.locationUpdated, e => {
@@ -24,8 +24,8 @@
           $("#latestLocation").html(
             //  set the latest location under the location icon
             dataStorage.locationHist[0].location[0] +
-              ", " +
-              dataStorage.locationHist[0].location[1]
+            ", " +
+            dataStorage.locationHist[0].location[1]
           );
         });
         $("#content").runThenOn(events.equipmentUpdated, e => {
@@ -34,12 +34,12 @@
             //  set the latest location under the location icon
             dataStorage.equipmentHist[0].equipment ? "equipped" : "not equipped"
           );
-          if(dataStorage.panicHist.length !== 0){
+          if (dataStorage.panicHist.length !== 0) {
             $("#statusReading").html(`Recent panic at ${new Date(Date.now())}`)
           }
-          
+
         });
-        
+
         break;
 
       case "status":
@@ -50,10 +50,10 @@
             reading < 20
               ? "cold"
               : reading < 25
-              ? "cool"
-              : reading < 28
-              ? "warm"
-              : "hot";
+                ? "cool"
+                : reading < 28
+                  ? "warm"
+                  : "hot";
           $("#roomTempReading").html(readingComment);
         });
         $("#content").runThenOn(events.heartRateUpdated, e => {
@@ -65,12 +65,12 @@
             reading.heartRate < 55
               ? "low"
               : reading.heartRate < 75
-              ? "ideal"
-              : reading.heartRate < 80
-              ? "quite high"
-              : reading.heartRate < 95
-              ? "high"
-              : "very high";
+                ? "ideal"
+                : reading.heartRate < 80
+                  ? "quite high"
+                  : reading.heartRate < 95
+                    ? "high"
+                    : "very high";
 
           $("#heartRateReading").html(readingComment);
         });
@@ -107,7 +107,7 @@
             showModal(
               "viewImage.html#imageContainer",
               "0",
-              () => {},
+              () => { },
               () => {
                 var image = new Image();
                 image.src =
